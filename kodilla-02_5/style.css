@@ -2,3 +2,76 @@ body {
     font-family: 'Quicksand', sans-serif;
     background-color: mediumseagreen;
 }
+
+.star8 {
+    display: inline-block;
+    margin: 2em;
+    transform: rotate(22deg);
+    /*transition: background linear 0.3s;*/
+}
+
+.star8::before {
+    background-color: white;
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    transform: rotate(45deg);
+}
+
+.star8, .star8::before, i.fa {
+    width: 80px;
+    height: 80px;
+}
+
+.gold, .gold::before {
+    border: 6px solid gold;
+}
+
+.gold, .gold::before, .gold i.fa {
+    transition: ease-in-out 400ms;
+}
+
+.silver, .silver::before {
+    border: 6px solid silver;
+}
+
+.silver, .silver::before, .silver i.fa {
+    transition: ease-in-out 400ms;
+}
+
+.bronze, .bronze::before {
+    border: 6px solid chocolate;
+}
+
+.bronze, .bronze::before, .bronze i.fa {
+    transition: ease-in-out 400ms;
+}
+
+i.fa {
+    margin: 0;
+    position: absolute;
+    background-color: white;
+    font-size: 60px;
+}
+
+i.fa::before {
+    position: absolute;
+    margin: 10px;
+    transform: rotate(-22deg);
+}
+
+.gold:hover::before, .gold:hover, .gold:hover i.fa {
+    background-color: gold;
+    color: white;
+}
+
+.silver:hover::before, .silver:hover, .silver:hover i.fa {
+    background-color: silver;
+    color: white;
+}
+
+.bronze:hover::before, .bronze:hover, .bronze:hover i.fa {
+    background-color: chocolate;
+    color: white;
+}

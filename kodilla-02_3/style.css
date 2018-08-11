@@ -3,6 +3,10 @@ body {
     background: lightblue;
 }
 
+* {
+    box-sizing:border-box;
+}
+
 .jumbotron {
     width: 100%;
     height: 100vh;
@@ -29,9 +33,20 @@ body {
     border: none;
     cursor: pointer;
     transition: 300ms;
+    border-radius: 5px;
 }
 
 .jumbotron button:hover {
     background-color: #7E9FED;
 
+}
+
+.gallery img {
+    float: left;
+    width: 25%;
+}
+
+.gallery img:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }

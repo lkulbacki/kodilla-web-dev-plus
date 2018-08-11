@@ -5,8 +5,8 @@ body {
 
 ul {
     padding: 0;
+    margin: 0;
     list-style-type: none;
-
 }
 
 nav {
@@ -14,14 +14,11 @@ nav {
     background-color: #4577ED;
     margin: 0;
     text-align: center;
-}
-nav ul {
-    /*position: relative;*/
-    /*display: block;*/
-    /*margin: 0;*/
+    font-size: 0;
 }
 
 nav li {
+    font-size: 16px;
     position: relative;
     display: inline-block;
 }
@@ -31,20 +28,32 @@ nav a {
     height: 50px;
     line-height: 50px;
     padding: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 500ms;
 }
 
-nav li ul {
+nav a:hover {
+    background-color: #3255a7;
+}
+
+.submenu {
     display: none;
-}
-
-nav li:hover ul {
-    display: inline-block;
     position: absolute;
-    /*top: 5px;*/
+    background-color: #4577ED;
+    /*width: 100%; !* dodane, żeby submenu nie wystawało poza obrys menu - prawidłowo? czy lepiej left/rifht na dole?*!*/
     left: 0;
-    /*width: 200px;*/
+    right: 0;
 }
 
-nav li ul li {
+nav li:hover .submenu {
     display: block;
+}
+
+.submenu a {
+    display: block;
+}
+
+.submenu li {
+    width: 100%; /* dodane, żeby submenu nie wystawało poza obrys menu - prawidłowo? */
 }

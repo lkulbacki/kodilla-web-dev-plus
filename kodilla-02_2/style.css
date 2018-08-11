@@ -31,6 +31,7 @@ nav a {
     color: white;
     text-decoration: none;
     transition: background-color 500ms;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -42,8 +43,8 @@ nav a:hover {
     position: absolute;
     background-color: #4577ED;
     /*width: 100%; !* dodane, żeby submenu nie wystawało poza obrys menu - prawidłowo? czy lepiej left/rifht na dole?*!*/
-    left: 0;
-    right: 0;
+    /*left: 0;*/
+    /*right: 0;*/
 }
 
 nav li:hover .submenu {

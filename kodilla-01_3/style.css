@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background-color: rgb(245,222,140);
+    font-family: 'Rubik', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: rgb(235,33,56);
+    color: #EB2138;
+    background-image: url("https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=423&w=640");
+    background-image: url("https://cdn.mos.cms.futurecdn.net/gpWo7NHTSUB6VsLudssDm3-1200-80.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 48px;
+    background-color: #000000;
+}
+header p, header h1 {
+    text-align: center;
+    color: white;
+    background-color: #000000;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: #333333;
+    background-image: radial-gradient(circle farthest-side, #F5DE8C 0%, #423238 100%);
+}
+footer p {
+    text-align: center;
+    color: #423238;
+}
+footer a {
+    text-decoration: none;
+    color: #4ECDC4;
+    font-weight: bold;
+}
+
+img {
+    
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    border-width: 20px;
+    border-color: #000000 #FFFFFF;
+    border-style: solid;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 0 20%;
+}
+
+.passion h2 {
+    margin-top: 60px;
+    font-size: 28px;
+    color: #EB2138;
+}
+.effects h2, .gear h2 {
+    margin-top: 40px;
+    color: #B3702D;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+figcaption {
+    font-size: x-small;
+}

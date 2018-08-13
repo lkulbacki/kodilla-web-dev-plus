@@ -3,6 +3,8 @@ body {
     background-color: indianred;
 }
 
+button:focus {outline:0;}
+
 .social:first-child {
     color: #505050;
     font-size: 40px;

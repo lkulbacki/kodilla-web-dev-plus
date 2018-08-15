@@ -45,6 +45,7 @@ nav a:hover {
 }
 
 .submenu::before {
+    visibility: hidden;
     display: block;
     padding: 0 10px;
     position: absolute;
@@ -54,10 +55,11 @@ nav a:hover {
     background-color: #4577ED;
     line-height: 50px;
     color: white;
+    transition: all 0s ease-in-out;
 }
 
 .submenu:hover::before {
-    transition: all 0.5s ease-in-out;
+    visibility: visible;
     background-color: #3255a7;
 }
 

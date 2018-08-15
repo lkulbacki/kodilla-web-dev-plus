@@ -42,63 +42,35 @@ nav a:hover {
     display: none;
     position: absolute;
     background-color: #4577ED;
-    /*width: 100%; !* dodane, żeby submenu nie wystawało poza obrys menu - prawidłowo? czy lepiej left/rifht na dole?*!*/
-    /*left: 0;*/
-    /*right: 0;*/
+}
+
+.submenu::before {
+    display: block;
+    padding: 0 10px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    height: 50px;
+    background-color: #4577ED;
+    line-height: 50px;
+    color: white;
+}
+
+.submenu:hover::before {
+    transition: all 0.5s ease-in-out;
+    background-color: #3255a7;
 }
 
 .oregano::before {
     content: "Oregano";
-    display: block;
-    padding: 0 10px;
-    position: absolute;
-    top: -50px;
-    left: 0;
-    height: 50px;
-    background-color: #4577ED;
-    line-height: 50px;
-    color: white;
-}
-
-.oregano:hover::before {
-    background-color: #3255a7;
-    transition: all 0.5s ease-in-out;
 }
 
 .tymianek::before {
     content: "Tymianek";
-    display: block;
-    padding: 0 10px;
-    position: absolute;
-    top: -50px;
-    left: 0;
-    height: 50px;
-    line-height: 50px;
-    background-color: #4577ED;
-    color: white;
-}
-
-.tymianek:hover::before {
-    background-color: #3255a7;
-    transition: all 0.5s ease-in-out;
 }
 
 .rozmaryn::before {
     content: "Rozmaryn";
-    display: block;
-    padding: 0 10px;
-    position: absolute;
-    top: -50px;
-    left: 0;
-    height: 50px;
-    line-height: 50px;
-    background-color: #4577ED;
-    color: white;
-}
-
-.rozmaryn:hover::before {
-    background-color: #3255a7;
-    transition: background-color 0.5s ease-in-out;
 }
 
 nav li:hover .submenu {

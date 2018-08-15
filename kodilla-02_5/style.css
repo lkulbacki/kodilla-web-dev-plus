@@ -7,7 +7,7 @@ body {
     display: inline-block;
     margin: 2em;
     transform: rotate(22deg);
-    /*transition: background linear 0.3s;*/
+    transition: background linear .4s;
 }
 
 .star8::before {
@@ -29,7 +29,7 @@ body {
 }
 
 .gold, .gold::before, .gold i.fa {
-    transition: ease-in-out 400ms;
+    transition: ease-in-out .4s;
 }
 
 .silver, .silver::before {
@@ -37,7 +37,7 @@ body {
 }
 
 .silver, .silver::before, .silver i.fa {
-    transition: ease-in-out 400ms;
+    transition: ease-in-out .4s;
 }
 
 .bronze, .bronze::before {
@@ -48,10 +48,20 @@ body {
     transition: ease-in-out 400ms;
 }
 
-i.fa {
+
+.filler {
     margin: 0;
     position: absolute;
     background-color: white;
+    width: 80px;
+    height: 80px;
+    transition: background-color ease-in-out .4s;
+}
+
+i.fa {
+    margin: 0;
+    position: absolute;
+    color: black;
     font-size: 60px;
 }
 
@@ -61,17 +71,43 @@ i.fa::before {
     transform: rotate(-22deg);
 }
 
-.gold:hover::before, .gold:hover, .gold:hover i.fa {
+/* centrowanie ikon */
+.gold i.fa {
+    padding-left: 10px;
+}
+
+.silver i.fa {
+    padding-top: 2px;
+    padding-left: 1px;
+}
+
+.bronze i.fa {
+    margin-top: -4px;
+    padding-left: 2px;
+}
+
+/* font colour change */
+.gold:hover i.fa {
+    color: white;
+}
+
+.silver:hover i.fa {
+    color: white;
+}
+
+.bronze:hover i.fa {
+    color: white;
+}
+
+/* background colour change */
+.gold:hover::before, .gold:hover, .gold:hover .filler {
     background-color: gold;
-    color: white;
 }
 
-.silver:hover::before, .silver:hover, .silver:hover i.fa {
+.silver:hover::before, .silver:hover, .silver:hover .filler {
     background-color: silver;
-    color: white;
 }
 
-.bronze:hover::before, .bronze:hover, .bronze:hover i.fa {
+.bronze:hover::before, .bronze:hover, .bronze:hover .filler {
     background-color: chocolate;
-    color: white;
 }

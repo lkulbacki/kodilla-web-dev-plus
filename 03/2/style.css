@@ -1,6 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
     background-color: indianred;
 }
 
-button:focus {outline:0;}
+/* GRID def */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table ;
+    clear: both;
+}
+
+[class*="col-"]{
+    float: left;
+    min-height: 1px;
+    height: 150px;
+    padding: 12px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+.col-offset-0 {margin-left: 0}
+.col-offset-1 {margin-left: 8.33%;}
+.col-offset-2 {margin-left: 16.66%;}
+.col-offset-3 {margin-left: 25%;}
+.col-offset-4 {margin-left: 33.33%;}
+.col-offset-5 {margin-left: 41.66%;}
+.col-offset-6 {margin-left: 50%;}
+.col-offset-7 {margin-left: 58.33%;}
+.col-offset-8 {margin-left: 66.66%;}
+.col-offset-9 {margin-left: 75%;}
+.col-offset-10 {margin-left: 83.33%;}
+.col-offset-11 {margin-left: 91.66%;}
+.col-offset-12 {margin-left: 100%;}
+
+.to-be-nested {
+    padding: 0;
+}
+
+.row-1 div:nth-child(1) {
+    background-color: cornflowerblue;
+}
+
+.row-1 div:nth-child(2) {
+    background-color: greenyellow;
+}
+
+.row-2 div:nth-child(1) {
+    background-color: fuchsia;
+}
+
+.row-2 div:nth-child(2) {
+    background-color: white;
+}
+
+.row-3 div:nth-child(1) {
+    background-color: aquamarine;
+}
+
+.to-be-nested .row div:nth-child(1) {
+    background-color: darkred;
+}
+
+.to-be-nested .row div:nth-child(2) {
+    background-color: darkred;
+}

@@ -1,3 +1,5 @@
+/* HEADER */
+
 header {
     background-color: #2e302f;
     margin: 0;
@@ -54,4 +56,66 @@ header>nav ul>li:hover a {
 
 header>nav ul>li:hover {
     background-color: #BBBBBB;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    background-image: url('background-hero_2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.hero .slogan {
+    background-color: rgba(0,0,0,0.5);
+    max-width: 800px;
+    color: white;
+    float: right;
+    margin-top: 100px;
+    /* Jako alternatywę do float + margin-top myślałem o czymś takim: */
+    /*position: absolute;*/
+    /*top: 30%;*/
+    /*right: 0;*/
+    /* jest preferowany sposób? */
+}
+
+.hero .slogan h1 {
+    margin: auto 0;
+    padding: 15px 180px 15px 40px;
+    text-transform: uppercase;
+    line-height: 35px;
+    font-size: 24px;
+    font-weight: 100;
+
+}
+
+.hero .slogan h1 bold {
+    font-weight: 700;
+}
+
+.hero .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    max-width: 150px;
+    width: 150px;
+    list-style-type: none;
+    display: block;
+    margin: auto 0;
+    padding: 0;
+}
+
+.hero .dots li {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #81807e;
+    margin: 0 10px;
+}
+
+.hero .dots li:hover {
+    background-color: #ffffff;
 }

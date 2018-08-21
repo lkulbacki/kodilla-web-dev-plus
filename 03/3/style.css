@@ -19,20 +19,6 @@ header img {
     margin-top: 10px;
 }
 
-/*header>nav ul:before,*/
-/*header>nav ul:after {*/
-    /*content: "";*/
-    /*display: table;*/
-    /*clear: both;*/
-/*}*/
-
-/*header>nav:before,*/
-/*header>nav:after {*/
-    /*content: "";*/
-    /*display: table;*/
-    /*clear: both;*/
-/*}*/
-
 header li {
     display: inline-block;
     line-height: 50px;

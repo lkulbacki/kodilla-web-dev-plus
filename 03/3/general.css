@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
 }
 
@@ -54,3 +54,10 @@ body {
 .col-offset-10 {margin-left: 83.33%;}
 .col-offset-11 {margin-left: 91.66%;}
 .col-offset-12 {margin-left: 100%;}
+
+/* EXTRA */
+
+section > .container {
+    margin: 50px auto;
+    text-align: center;
+}

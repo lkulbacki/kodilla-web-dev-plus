@@ -105,3 +105,61 @@ header>nav ul>li:hover {
 .hero .dots li:hover {
     background-color: #ffffff;
 }
+
+/* BENEFITS */
+.benefits {
+    min-height: 300px;
+    background-color: white;
+}
+
+.benefits .row {
+    width: 950px;
+}
+
+.benefits .col .icon {
+    width: 105px;
+    height: 105px;
+    background-color: #2e302f;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.benefits .col:nth-of-type(2) .icon {
+    background-color: #00c9e5;
+}
+
+.benefits .col:nth-of-type(2) h2 {
+    color: #00c9e5;
+}
+
+.benefits i {
+    display: inline-block;
+    width: 105px;
+    height: 105px;
+    line-height: 105px;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+}
+
+.benefits .col:nth-child(3) i {
+    padding-left: 6px;
+}
+
+.benefits h2 {
+    text-transform: uppercase;
+}
+
+.benefits p {
+    font-weight: 200;
+}
+
+/* FEATURED */
+
+.featured h1 {
+    text-transform: uppercase;
+}
+
+.featured p {
+    font-weight: 200;
+}

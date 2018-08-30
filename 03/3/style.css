@@ -163,3 +163,101 @@ header>nav ul>li:hover {
 .featured p {
     font-weight: 200;
 }
+
+/* GALLERY */
+.gallery .row {
+    margin: 0;
+    height: 170px;
+    width: 100%;
+}
+
+.gallery .container {
+    max-width: none;
+}
+
+.gallery .col {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding: 0;
+
+}
+
+.gallery .col:hover .layer {
+    visibility: visible;
+    background-color: rgba(0,0,0,0.7);
+
+}
+
+.gallery .col:hover i {
+    visibility: visible;
+}
+
+.gallery .layer {
+    visibility: hidden;
+    line-height: 170px;
+    transition: all .3s ease-in-out;
+}
+
+.gallery .layer i {
+    visibility: hidden;
+    padding: 9px 7px;
+    background-color: white;
+    color: rgba(0,0,0,0.9);
+    font-size: 16px;
+    border-radius: 7px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.gallery .layer i:hover {
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    cursor: pointer;
+}
+
+.gallery .row:nth-of-type(1) .col:nth-of-type(1) {
+    background-image: url("https://picsum.photos/250/170?image=1011");
+}
+
+.gallery .row:nth-of-type(1) .col:nth-of-type(2) {
+    background-image: url("https://picsum.photos/250/170?image=998");
+}
+
+.gallery .row:nth-of-type(1) .col:nth-of-type(3) {
+    background-image: url("https://picsum.photos/250/170?image=984");
+}
+
+.gallery .row:nth-of-type(1) .col:nth-of-type(4) {
+    background-image: url("https://picsum.photos/250/170?image=967");
+}
+
+.gallery .row:nth-of-type(1) .col:nth-of-type(5) {
+    background-image: url("https://picsum.photos/500/170?image=958");
+}
+
+.gallery .row:nth-of-type(2) .col:nth-of-type(1) {
+    background-image: url("https://picsum.photos/500/170?image=820");
+}
+
+.gallery .row:nth-of-type(2) .col:nth-of-type(2) {
+    background-image: url("https://picsum.photos/250/170?image=966");
+}
+
+.gallery .row:nth-of-type(2) .col:nth-of-type(3) {
+    background-image: url("https://picsum.photos/250/170?image=912");
+}
+
+.gallery .row:nth-of-type(2) .col:nth-of-type(4) {
+    background-image: url("https://picsum.photos/250/170?image=943");
+}
+
+.gallery .row:nth-of-type(2) .col:nth-of-type(5) {
+    background-image: url("https://picsum.photos/250/170?image=701");
+}
+.gallery .row:nth-of-type(2) {
+    margin-bottom: 60px;
+}

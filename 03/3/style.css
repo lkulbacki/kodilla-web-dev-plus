@@ -350,3 +350,19 @@ header>nav ul>li:hover {
 .promo .col-4 p {
     font-style: italic;
 }
+
+/* NUMBERS */
+.numbers__number {
+    font-weight: 900;
+    font-size: 48px;
+    color: #2e302f;
+    margin: 0;
+
+}
+
+.numbers__number_comment {
+    font-family: 'Mukta';
+    text-transform: uppercase;
+    color: #00c9e5;
+    margin-top: 5px;
+}

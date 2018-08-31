@@ -352,6 +352,10 @@ header>nav ul>li:hover {
 }
 
 /* NUMBERS */
+.numbers .container {
+    height: 100px;
+}
+
 .numbers__number {
     font-weight: 900;
     font-size: 48px;
@@ -361,7 +365,7 @@ header>nav ul>li:hover {
 }
 
 .numbers__number_comment {
-    font-family: 'Mukta';
+    font-family: 'Mukta', sans-serif;
     text-transform: uppercase;
     color: #00c9e5;
     margin-top: 5px;

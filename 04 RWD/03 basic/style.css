@@ -108,3 +108,28 @@ body {
     min-height: 100px;
     line-height: 100px;
 }
+@media (min-width: 768px) and (max-width: 1200px)  {
+    .hero {
+        /*background-image: url("hero_medium.jpg");*/
+        color: white;
+        padding: 15px;
+        background-color: orangered;
+    }
+
+    .header__logo{
+        margin-left: 2%;
+    }
+
+    .header__nav {
+        margin-right: 2%;
+    }
+
+    .gallery__photo {
+        margin-right: 1%;
+        margin-left: 2%;
+    }
+
+    .gallery__photo:last-of-type {
+        margin-right: 2%;
+    }
+}

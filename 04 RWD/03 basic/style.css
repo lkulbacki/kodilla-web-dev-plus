@@ -108,6 +108,10 @@ body {
     background-color: #F5DE8C;
 }
 
+.map img {
+    width: 100%;
+}
+
 /* FOOTER */
 .footer {
     width: 100%;

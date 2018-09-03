@@ -1,4 +1,8 @@
 body {
     font-family: sans-serif;
-    background-color: #C8D197;
+    background-color: #FFFFFF;
+}
+
+figure {
+    margin-bottom: 15px;
 }

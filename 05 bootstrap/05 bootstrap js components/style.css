@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    background-color: #FFFFFF;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.label-warning {
+    margin-left: 10px;
+}
+
+.carousel img {
+    margin: 0 auto;
+    object-fit: cover;
+    background-size: cover;
+}
+
+.carousel .item {
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel .item:nth-of-type(1) {
+    background-image: url(https://via.placeholder.com/800x400/E3D0D5?text=Carousel+1);
+}
+
+.carousel .item:nth-of-type(2) {
+    background-image: url(https://via.placeholder.com/800x400/A3DFD5?text=Carousel+2);
+}
+
+.carousel .item:nth-of-type(3) {
+    background-image: url(https://via.placeholder.com/800x400/6D4D5C?text=Carousel+3);
+}
+
+.carousel .item:nth-of-type(4) {
+    background-image: url(https://via.placeholder.com/800x400/404153?text=Carousel+4);
+}
+
+.carousel .item:nth-of-type(5) {
+    background-image: url(https://via.placeholder.com/800x400/FEDB59?text=Carousel+5);
+}
+
+.section-tabs, .section-modal {
+    padding-top: 20px;
+}

@@ -18,14 +18,22 @@ body {
 .row:after {
     content: "";
     display: table ;
+}
+
+.row:after {
     clear: both;
 }
 
 [class*="col-"]{
     float: left;
     min-height: 1px;
-    height: 150px;
     padding: 12px;
+}
+
+[class*="col-"]:after {
+    content: "";
+    display: table ;
+    clear: both;
 }
 
 .col-1 {width: 8.33%;}
@@ -60,4 +68,11 @@ body {
 section > .container {
     margin: 50px auto;
     text-align: center;
+}
+
+.visible-xs-block,
+.visible-sm-block,
+.visible-md-block,
+.visible-lg-block {
+    display: none !important;
 }

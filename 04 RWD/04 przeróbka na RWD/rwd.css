@@ -55,6 +55,10 @@
     .col-sm-11 {width: 91.66%;}
     .col-sm-12 {width: 100%;}
 
+    .visible-sm-block {
+        display: block !important;
+    }
+
     .benefits .row {
         width: 100%;
     }
@@ -68,7 +72,7 @@
     }
 
     .team {
-        height: 660px;
+        height: unset;
     }
 
     .promo {

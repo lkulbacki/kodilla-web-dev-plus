@@ -112,9 +112,9 @@ header>nav ul>li:hover {
     background-color: white;
 }
 
-.benefits .row {
-    width: 950px;
-}
+/*.benefits .row {*/
+    /*width: 950px;*/
+/*}*/
 
 .benefits .col .icon {
     width: 105px;

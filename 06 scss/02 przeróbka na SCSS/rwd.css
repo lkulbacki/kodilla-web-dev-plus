@@ -1,5 +1,5 @@
 @media (max-width: 767px) {
-  header img {
+  header {
     display: block;
     margin: 0 auto; }
 
@@ -18,16 +18,13 @@
 
   .hero {
     height: 80vh; }
-
-  .hero .dots {
-    left: 40%; }
-
-  .hero .slogan {
-    margin-top: 50vh; }
-
-  .hero .slogan h1 {
-    line-height: 22px;
-    font-size: 18px; }
+    .hero .dots {
+      left: 40%; }
+    .hero .slogan {
+      margin-top: 50vh; }
+      .hero .slogan h1 {
+        line-height: 22px;
+        font-size: 18px; }
 
   [class*="col-sm"] {
     float: left;
@@ -79,32 +76,24 @@
   .container {
     max-width: 750px; }
 
-  .gallery {
-    /*height: calc(4*170px);*/ }
-
   .team {
     height: unset; }
 
   .promo img {
     height: 188px; }
-
   .promo h2 {
     font-size: 25px;
     margin-top: 0; }
-
   .promo p {
     line-height: 20px;
     font-size: small; }
-
   .promo .container {
     position: relative; }
-
-  .promo .container > div:nth-of-type(1) {
-    position: absolute;
-    bottom: -16px; }
-
-  .promo .container > div:nth-of-type(3) {
-    padding-bottom: 200px; }
+    .promo .container > div:nth-of-type(1) {
+      position: absolute;
+      bottom: -16px; }
+    .promo .container > div:nth-of-type(3) {
+      padding-bottom: 200px; }
 
   .numbers .container {
     height: unset; }
@@ -158,40 +147,34 @@
   .container {
     max-width: 970px; }
 
-  header img {
-    display: block;
-    margin: 0 auto; }
-
   header {
     padding: 10px;
     min-height: 50px;
     height: auto; }
-
-  header > nav ul {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 10px auto 0 auto;
-    float: none; }
+    header img {
+      display: block;
+      margin: 0 auto; }
+    header > nav ul {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 10px auto 0 auto;
+      float: none; }
 
   .team {
     height: unset; }
 
   .promo h2 {
     font-size: 30px; }
-
   .promo img {
     height: 200px; }
-
   .promo .container {
     position: relative;
     padding-top: 0; }
-
-  .promo .container > div:nth-of-type(1) {
-    position: absolute;
-    bottom: -16px; }
-
-  .promo .container > div:nth-of-type(3) {
-    padding-bottom: 230px; } }
+    .promo .container > div:nth-of-type(1) {
+      position: absolute;
+      bottom: -16px; }
+    .promo .container > div:nth-of-type(3) {
+      padding-bottom: 230px; } }
 
 /*# sourceMappingURL=rwd.css.map */

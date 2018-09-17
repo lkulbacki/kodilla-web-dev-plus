@@ -1,63 +1,88 @@
+/* COLOURS */
+
+$project-white: #ffffff;
+$project-light-blue: #00c8e9;
+$project-dark-grey: #2e302f;
+$project-light-grey: #81807e;
+
+/* STYLES */
+
+.font-ultralight {
+  font-weight: 100;
+}
+
+.font-light {
+  font-weight: 200;
+}
+
+.font-middle {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
 /* HEADER */
 
 header {
-    background-color: #2e302f;
-    margin: 0;
-    height: 50px;
-    padding: 0 160px;
-}
+  background-color: $project-dark-grey;
+  margin: 0;
+  height: 50px;
+  padding: 0 160px;
+  > nav {
+    ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      float: right;
+    }
 
-header>nav ul {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: right;
-}
+    ul > li > a {
+      height: 50px;
+      color: $project-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-header img {
+    ul > li:hover a {
+      color: $project-light-blue;
+    }
+
+    ul > li:hover {
+      background-color: $project-light-grey;
+    }
+  }
+
+  img {
     margin-top: 10px;
-}
+  }
 
-header li {
+  li {
     display: inline-block;
     line-height: 50px;
     height: 50px;
     padding: 0 20px;
     min-width: 70px;
 
-}
-
-header>nav ul>li>a {
-    height: 50px;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-header>nav ul>li:hover a {
-    color: #00b7d8;
-}
-
-header>nav ul>li:hover {
-    background-color: #BBBBBB;
+  }
 }
 
 /* HERO */
 
 .hero {
-    position: relative;
-    background-image: url('background-hero_2.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-}
+  position: relative;
+  background-image: url('background-hero_2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
 
-.hero .slogan {
+  .slogan {
     background-color: rgba(0,0,0,0.5);
     max-width: 800px;
-    color: white;
+    color: $project-white;
     float: right;
     margin-top: 100px;
     /* Jako alternatywę do float + margin-top myślałem o czymś takim: */
@@ -65,23 +90,23 @@ header>nav ul>li:hover {
     /*top: 30%;*/
     /*right: 0;*/
     /* jest preferowany sposób? */
-}
 
-.hero .slogan h1 {
-    margin: auto 0;
-    padding: 15px 180px 15px 40px;
-    text-transform: uppercase;
-    line-height: 35px;
-    font-size: 24px;
-    font-weight: 100;
+    h1 {
+      @extend .font-ultralight;
+      margin: auto 0;
+      padding: 15px 180px 15px 40px;
+      text-transform: uppercase;
+      line-height: 35px;
+      font-size: 24px;
 
-}
+    }
 
-.hero .slogan h1 bold {
-    font-weight: 700;
-}
+    h1 bold {
+      @extend .font-heavy;
+    }
+  }
 
-.hero .dots {
+  .dots {
     position: absolute;
     bottom: 20px;
     left: 45%;
@@ -91,380 +116,358 @@ header>nav ul>li:hover {
     display: block;
     margin: auto 0;
     padding: 0;
-}
-
-.hero .dots li {
+  }
+  li {
     display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 25px;
-    background-color: #81807e;
+    background-color: $project-light-grey;
     margin: 0 10px;
-}
-
-.hero .dots li:hover {
-    background-color: #ffffff;
+    &:hover { background-color: $project-white; }
+  }
 }
 
 /* BENEFITS */
 .benefits {
-    min-height: 300px;
-    background-color: white;
-}
+  min-height: 300px;
+  background-color: white;
 
-/*.benefits .row {*/
-/*width: 950px;*/
-/*}*/
+  .col {
 
-.benefits .col .icon {
-    width: 105px;
-    height: 105px;
-    background-color: #2e302f;
-    margin: 0 auto;
-    border-radius: 20px;
-}
+    .icon {
+      width: 105px;
+      height: 105px;
+      background-color: $project-dark-grey;
+      margin: 0 auto;
+      border-radius: 20px;
+    }
 
-.benefits .col:nth-of-type(2) .icon {
-    background-color: #00c9e5;
-}
+    &:nth-of-type(3) .icon {
+      background-color: $project-light-blue;
+    }
 
-.benefits .col:nth-of-type(2) h2 {
-    color: #00c9e5;
-}
+    &:nth-of-type(3) h2 {
+      color: $project-light-blue;
+    }
 
-.benefits i {
+    &:nth-child(5) i {
+      padding-left: 6px;
+    }
+  }
+
+  i {
     display: inline-block;
     width: 105px;
     height: 105px;
     line-height: 105px;
     text-align: center;
     font-size: 70px;
-    color: white;
-}
-
-.benefits .col:nth-child(3) i {
-    padding-left: 6px;
-}
-
-.benefits h2 {
+    color: $project-white;
+  }
+  h2 {
     text-transform: uppercase;
+  }
+  p {
+    @extend .font-light;
+  }
 }
 
-.benefits p {
-    font-weight: 200;
-}
 
 /* FEATURED */
 
-.featured h1 {
+.featured {
+  h1 {
     text-transform: uppercase;
-}
+  }
 
-.featured p {
-    font-weight: 200;
+  p {
+    @extend .font-light;
+  }
 }
 
 /* GALLERY */
-.gallery .row {
+.gallery {
+  .row {
     margin: 0;
     width: 100%;
-}
-
-.gallery .container {
+  }
+  .container {
     max-width: none;
-}
-
-.gallery .col {
+  }
+  .col {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     padding: 0;
 
-}
+    &:hover .layer {
+      visibility: visible;
+      background-color: rgba(0,0,0,0.7);
+    }
 
-.gallery .col:hover .layer {
-    visibility: visible;
-    background-color: rgba(0,0,0,0.7);
+    &:hover i {
+      visibility: visible;
+    }
 
-}
-
-.gallery .col:hover i {
-    visibility: visible;
-}
-
-.gallery .layer {
+  }
+  .layer {
     visibility: hidden;
     line-height: 170px;
     transition: all .3s ease-in-out;
-}
+    i {
+      visibility: hidden;
+      padding: 9px 7px;
+      background-color: $project-white;
+      color: rgba(0,0,0,0.9);
+      font-size: 16px;
+      border-radius: 7px;
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      transition: all .2s ease-in-out;
+      &:hover {
+        background-color: rgba(0,0,0,0.9);
+        color: $project-white;
+        cursor: pointer;
+      }
+    }
+  }
 
-.gallery .layer i {
-    visibility: hidden;
-    padding: 9px 7px;
-    background-color: white;
-    color: rgba(0,0,0,0.9);
-    font-size: 16px;
-    border-radius: 7px;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    transition: all .2s ease-in-out;
-}
+  .row:nth-of-type(1) > div {
+    &:nth-of-type(1) {
+      background-image: url("https://picsum.photos/250/170?image=1011");
+    }
+    &:nth-of-type(2) {
+      background-image: url("https://picsum.photos/250/170?image=998");
+    }
+    &:nth-of-type(3) {
+      background-image: url("https://picsum.photos/250/170?image=984");
+    }
+    &:nth-of-type(5) {
+      background-image: url("https://picsum.photos/250/170?image=967");
+    }
+    &:nth-of-type(6) {
+      background-image: url("https://picsum.photos/500/170?image=958");
+    }
+  }
 
-.gallery .layer i:hover {
-    background-color: rgba(0,0,0,0.9);
-    color: white;
-    cursor: pointer;
-}
+  .row:nth-of-type(2) > div {
+    &:nth-of-type(1) {
+      background-image: url("https://picsum.photos/500/170?image=820");
+    }
+    &:nth-of-type(2) {
+      background-image: url("https://picsum.photos/250/170?image=966");
+    }
+    &:nth-of-type(4) {
+      background-image: url("https://picsum.photos/250/170?image=912");
+    }
+    &:nth-of-type(5) {
+      background-image: url("https://picsum.photos/250/170?image=943");
+    }
+    &:nth-of-type(6) {
+      background-image: url("https://picsum.photos/250/170?image=701");
+    }
+  }
 
-.gallery .row:nth-of-type(1) > div:nth-of-type(1) {
-    background-image: url("https://picsum.photos/250/170?image=1011");
-}
-
-.gallery .row:nth-of-type(1) > div:nth-of-type(2) {
-    background-image: url("https://picsum.photos/250/170?image=998");
-}
-
-.gallery .row:nth-of-type(1) > div:nth-of-type(3) {
-    background-image: url("https://picsum.photos/250/170?image=984");
-}
-
-.gallery .row:nth-of-type(1) > div:nth-of-type(5) {
-    background-image: url("https://picsum.photos/250/170?image=967");
-}
-
-.gallery .row:nth-of-type(1) > div:nth-of-type(6) {
-    background-image: url("https://picsum.photos/500/170?image=958");
-}
-
-.gallery .row:nth-of-type(2) > div:nth-of-type(1) {
-    background-image: url("https://picsum.photos/500/170?image=820");
-}
-
-.gallery .row:nth-of-type(2) > div:nth-of-type(2) {
-    background-image: url("https://picsum.photos/250/170?image=966");
-}
-
-.gallery .row:nth-of-type(2) > div:nth-of-type(4) {
-    background-image: url("https://picsum.photos/250/170?image=912");
-}
-
-.gallery .row:nth-of-type(2) > div:nth-of-type(5) {
-    background-image: url("https://picsum.photos/250/170?image=943");
-}
-
-.gallery .row:nth-of-type(2) > div:nth-of-type(6) {
-    background-image: url("https://picsum.photos/250/170?image=701");
-}
-.gallery .row:nth-of-type(2) {
+  .row:nth-of-type(2) {
     margin-bottom: 60px;
+  }
 }
 
 /* TEAM */
 
 .team {
-    text-align: center;
-    height: 330px;
-}
-
-.team .photo {
+  text-align: center;
+  height: 330px;
+  .photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     margin: 30px auto;
     background: transparent no-repeat center;
     background-size: cover;
-}
+    &:hover p {
+      visibility: visible;
+    }
+    p {
+      @extend .font-heavy;
+      visibility: hidden;
+      line-height: 200px;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      color: $project-white;
+      font-size: 22px;
+    }
 
-.team .photo:hover p {
-    visibility: visible;
-}
-
-.team .photo p {
-    visibility: hidden;
-    line-height: 200px;
-    width: 200px;
-    height: 200px;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 50%;
-    color: white;
-    font-weight: 700;
-    font-size: 22px;
-}
-
-.team .col:nth-of-type(1) .photo {
+  }
+  .col:nth-of-type(1) .photo {
     background-image: url("media/team_01.jpg");
-}
-.team .col:nth-of-type(2) .photo {
+  }
+  .col:nth-of-type(2) .photo {
     background-image: url("media/team_02.jpg");
-}
-.team .col:nth-of-type(3) .photo {
+  }
+  .col:nth-of-type(3) .photo {
     background-image: url("media/team_03.jpg");
-}
-.team .col:nth-of-type(4) .photo {
+  }
+  .col:nth-of-type(4) .photo {
     background-image: url("media/team_04.jpg");
-}
-
-.team .name {
+  }
+  .name {
+    @extend .font-middle;
     color: #595957;
-    font-weight: 400;
     font-size: 20px;
+  }
 }
 
 /* PROMO */
 
 .promo {
-    background-color: darkgrey;
-    margin-bottom: 60px;
+  background-color: $project-light-grey;
+  margin-bottom: 60px;
 
-}
-
-.promo .container {
+  .container {
     padding-top: 60px;
-}
+    > div:first-of-type {
+      padding-bottom: 0;
+    }
+  }
 
-.promo .container > div:first-of-type {
-    padding-bottom: 0;
-}
-
-.promo img {
+  img {
     height: 258px;
-}
+  }
 
-.promo h2 {
+  h2 {
     text-transform: uppercase;
     text-align: left;
-    color: white;
+    color: $project-white;
     font-size: 40px;
     margin-bottom: 0;
     padding-left: 12px;
     margin-top: 12px;
-}
-
-.promo p {
+  }
+  p {
     text-align: left;
-    color: white;
+    color: $project-white;
     line-height: 24px;
     margin: 0;
-}
+  }
 
-.promo .col-4 p {
+  .col-4 p {
     font-style: italic;
+  }
+
 }
 
 /* NUMBERS */
 .numbers .container {
-    height: 100px;
+  height: 100px;
 }
 
 .numbers__number {
-    font-weight: 900;
-    font-size: 48px;
-    color: #2e302f;
-    margin: 0;
+  font-weight: 900;
+  font-size: 48px;
+  color: $project-dark-grey;
+  margin: 0;
 
 }
 
 .numbers__number_comment {
-    font-family: 'Mukta', sans-serif;
-    text-transform: uppercase;
-    color: #00c9e5;
-    margin-top: 5px;
+  font-family: 'Mukta', sans-serif;
+  text-transform: uppercase;
+  color: $project-light-blue;
+  margin-top: 5px;
 }
 
 /* FOOTER */
 .footer {
-    background-color: #2e302f;
-    height: 240px;
-    color: white;
+  background-color: $project-dark-grey;
+  height: 240px;
+  color: $project-white;
 }
 
 .footer__info_container > .col {
-    padding-top: 0;
-    padding-right: 50px;
+  padding-top: 0;
+  padding-right: 50px;
 }
 
 .footer__header_container {
-    padding-top: 50px;
-    margin-bottom: 15px;
+  padding-top: 50px;
+  margin-bottom: 15px;
 }
 
 .footer__header_text {
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0;
-    font-size: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  font-size: 20px;
 }
 
 .footer__header_line {
-    display: inline-block;
-    height: 8px;
-    width: 70px;
-    border-top: solid white 2px;
-    margin-left: 12px;
+  display: inline-block;
+  height: 8px;
+  width: 70px;
+  border-top: solid $project-white 2px;
+  margin-left: 12px;
 }
 
 .footer__text {
-    font-weight: 100;
-    margin: 0;
-    font-size: 14px;
-    line-height: 20px;
+  @extend .font-ultralight;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .footer__contact_name {
-    margin: 0;
+  margin: 0;
 }
 
 .footer__contact_detail a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: $project-white;
 }
 
 .footer__column2 .col {
-    height: 50px;
-    padding: 0;
+  height: 50px;
+  padding: 0;
 }
 
 .footer__social_text {
-    margin-bottom: 11px;
+  margin-bottom: 11px;
 }
 
 .footer__social_icon {
-    display: inline-block;
-    margin-right: 7px;
-    width: 27px;
-    height: 27px;
-    background-color: #00c8e9;
-    border-radius: 2px;
-    padding-left: 4px;
-    padding-top: 1px;
-    transition: all ease-in-out .3s;
-}
-
-.footer__social_icon:nth-of-type(3) {
+  display: inline-block;
+  margin-right: 7px;
+  width: 27px;
+  height: 27px;
+  background-color: $project-light-blue;
+  border-radius: 2px;
+  padding-left: 4px;
+  padding-top: 1px;
+  transition: all ease-in-out .3s;
+  font-size: 22px;
+  &:nth-of-type(3) {
     padding-left: 5px;
-}
-
-.footer__social_icon:hover {
+  }
+  &:hover {
     cursor: pointer;
-    background-color: white;
-    color: #00c8e9;
-}
-
-.footer__social_icon {
-    font-size: 22px;
+    background-color: $project-white;
+    color: $project-light-blue;
+  }
 }
 
 .copyright {
-    background-color: #202221;
-    height: 50px;
-    line-height: 50px;
-}
-
-.copyright p {
+  background-color: #202221;
+  height: 50px;
+  line-height: 50px;
+  p {
     margin: 0;
-    color: white;
+    color: $project-white;
     font-size: 14px;
     text-align: center;
+  }
 }

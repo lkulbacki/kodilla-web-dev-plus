@@ -316,13 +316,16 @@ header>nav ul>li:hover {
 
 .promo {
     background-color: darkgrey;
-    height: 330px;
     margin-bottom: 60px;
 
 }
 
 .promo .container {
     padding-top: 60px;
+}
+
+.promo .container > div:first-of-type {
+    padding-bottom: 0;
 }
 
 .promo img {

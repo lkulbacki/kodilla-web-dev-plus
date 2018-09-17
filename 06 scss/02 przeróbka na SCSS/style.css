@@ -1,0 +1,387 @@
+@charset "UTF-8";
+/* HEADER */
+header {
+  background-color: #2e302f;
+  margin: 0;
+  height: 50px;
+  padding: 0 160px; }
+
+header > nav ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right; }
+
+header img {
+  margin-top: 10px; }
+
+header li {
+  display: inline-block;
+  line-height: 50px;
+  height: 50px;
+  padding: 0 20px;
+  min-width: 70px; }
+
+header > nav ul > li > a {
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px; }
+
+header > nav ul > li:hover a {
+  color: #00b7d8; }
+
+header > nav ul > li:hover {
+  background-color: #BBBBBB; }
+
+/* HERO */
+.hero {
+  position: relative;
+  background-image: url("background-hero_2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px; }
+
+.hero .slogan {
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  color: white;
+  float: right;
+  margin-top: 100px;
+  /* Jako alternatywę do float + margin-top myślałem o czymś takim: */
+  /*position: absolute;*/
+  /*top: 30%;*/
+  /*right: 0;*/
+  /* jest preferowany sposób? */ }
+
+.hero .slogan h1 {
+  margin: auto 0;
+  padding: 15px 180px 15px 40px;
+  text-transform: uppercase;
+  line-height: 35px;
+  font-size: 24px;
+  font-weight: 100; }
+
+.hero .slogan h1 bold {
+  font-weight: 700; }
+
+.hero .dots {
+  position: absolute;
+  bottom: 20px;
+  left: 45%;
+  max-width: 150px;
+  width: 150px;
+  list-style-type: none;
+  display: block;
+  margin: auto 0;
+  padding: 0; }
+
+.hero .dots li {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #81807e;
+  margin: 0 10px; }
+
+.hero .dots li:hover {
+  background-color: #ffffff; }
+
+/* BENEFITS */
+.benefits {
+  min-height: 300px;
+  background-color: white; }
+
+/*.benefits .row {*/
+/*width: 950px;*/
+/*}*/
+.benefits .col .icon {
+  width: 105px;
+  height: 105px;
+  background-color: #2e302f;
+  margin: 0 auto;
+  border-radius: 20px; }
+
+.benefits .col:nth-of-type(2) .icon {
+  background-color: #00c9e5; }
+
+.benefits .col:nth-of-type(2) h2 {
+  color: #00c9e5; }
+
+.benefits i {
+  display: inline-block;
+  width: 105px;
+  height: 105px;
+  line-height: 105px;
+  text-align: center;
+  font-size: 70px;
+  color: white; }
+
+.benefits .col:nth-child(3) i {
+  padding-left: 6px; }
+
+.benefits h2 {
+  text-transform: uppercase; }
+
+.benefits p {
+  font-weight: 200; }
+
+/* FEATURED */
+.featured h1 {
+  text-transform: uppercase; }
+
+.featured p {
+  font-weight: 200; }
+
+/* GALLERY */
+.gallery .row {
+  margin: 0;
+  width: 100%; }
+
+.gallery .container {
+  max-width: none; }
+
+.gallery .col {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 0; }
+
+.gallery .col:hover .layer {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.gallery .col:hover i {
+  visibility: visible; }
+
+.gallery .layer {
+  visibility: hidden;
+  line-height: 170px;
+  transition: all .3s ease-in-out; }
+
+.gallery .layer i {
+  visibility: hidden;
+  padding: 9px 7px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+  border-radius: 7px;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  transition: all .2s ease-in-out; }
+
+.gallery .layer i:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  cursor: pointer; }
+
+.gallery .row:nth-of-type(1) > div:nth-of-type(1) {
+  background-image: url("https://picsum.photos/250/170?image=1011"); }
+
+.gallery .row:nth-of-type(1) > div:nth-of-type(2) {
+  background-image: url("https://picsum.photos/250/170?image=998"); }
+
+.gallery .row:nth-of-type(1) > div:nth-of-type(3) {
+  background-image: url("https://picsum.photos/250/170?image=984"); }
+
+.gallery .row:nth-of-type(1) > div:nth-of-type(5) {
+  background-image: url("https://picsum.photos/250/170?image=967"); }
+
+.gallery .row:nth-of-type(1) > div:nth-of-type(6) {
+  background-image: url("https://picsum.photos/500/170?image=958"); }
+
+.gallery .row:nth-of-type(2) > div:nth-of-type(1) {
+  background-image: url("https://picsum.photos/500/170?image=820"); }
+
+.gallery .row:nth-of-type(2) > div:nth-of-type(2) {
+  background-image: url("https://picsum.photos/250/170?image=966"); }
+
+.gallery .row:nth-of-type(2) > div:nth-of-type(4) {
+  background-image: url("https://picsum.photos/250/170?image=912"); }
+
+.gallery .row:nth-of-type(2) > div:nth-of-type(5) {
+  background-image: url("https://picsum.photos/250/170?image=943"); }
+
+.gallery .row:nth-of-type(2) > div:nth-of-type(6) {
+  background-image: url("https://picsum.photos/250/170?image=701"); }
+
+.gallery .row:nth-of-type(2) {
+  margin-bottom: 60px; }
+
+/* TEAM */
+.team {
+  text-align: center;
+  height: 330px; }
+
+.team .photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 30px auto;
+  background: transparent no-repeat center;
+  background-size: cover; }
+
+.team .photo:hover p {
+  visibility: visible; }
+
+.team .photo p {
+  visibility: hidden;
+  line-height: 200px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 22px; }
+
+.team .col:nth-of-type(1) .photo {
+  background-image: url("media/team_01.jpg"); }
+
+.team .col:nth-of-type(2) .photo {
+  background-image: url("media/team_02.jpg"); }
+
+.team .col:nth-of-type(3) .photo {
+  background-image: url("media/team_03.jpg"); }
+
+.team .col:nth-of-type(4) .photo {
+  background-image: url("media/team_04.jpg"); }
+
+.team .name {
+  color: #595957;
+  font-weight: 400;
+  font-size: 20px; }
+
+/* PROMO */
+.promo {
+  background-color: darkgrey;
+  margin-bottom: 60px; }
+
+.promo .container {
+  padding-top: 60px; }
+
+.promo .container > div:first-of-type {
+  padding-bottom: 0; }
+
+.promo img {
+  height: 258px; }
+
+.promo h2 {
+  text-transform: uppercase;
+  text-align: left;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 0;
+  padding-left: 12px;
+  margin-top: 12px; }
+
+.promo p {
+  text-align: left;
+  color: white;
+  line-height: 24px;
+  margin: 0; }
+
+.promo .col-4 p {
+  font-style: italic; }
+
+/* NUMBERS */
+.numbers .container {
+  height: 100px; }
+
+.numbers__number {
+  font-weight: 900;
+  font-size: 48px;
+  color: #2e302f;
+  margin: 0; }
+
+.numbers__number_comment {
+  font-family: 'Mukta', sans-serif;
+  text-transform: uppercase;
+  color: #00c9e5;
+  margin-top: 5px; }
+
+/* FOOTER */
+.footer {
+  background-color: #2e302f;
+  height: 240px;
+  color: white; }
+
+.footer__info_container > .col {
+  padding-top: 0;
+  padding-right: 50px; }
+
+.footer__header_container {
+  padding-top: 50px;
+  margin-bottom: 15px; }
+
+.footer__header_text {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  font-size: 20px; }
+
+.footer__header_line {
+  display: inline-block;
+  height: 8px;
+  width: 70px;
+  border-top: solid white 2px;
+  margin-left: 12px; }
+
+.footer__text {
+  font-weight: 100;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px; }
+
+.footer__contact_name {
+  margin: 0; }
+
+.footer__contact_detail a {
+  text-decoration: none;
+  color: white; }
+
+.footer__column2 .col {
+  height: 50px;
+  padding: 0; }
+
+.footer__social_text {
+  margin-bottom: 11px; }
+
+.footer__social_icon {
+  display: inline-block;
+  margin-right: 7px;
+  width: 27px;
+  height: 27px;
+  background-color: #00c8e9;
+  border-radius: 2px;
+  padding-left: 4px;
+  padding-top: 1px;
+  transition: all ease-in-out .3s; }
+
+.footer__social_icon:nth-of-type(3) {
+  padding-left: 5px; }
+
+.footer__social_icon:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #00c8e9; }
+
+.footer__social_icon {
+  font-size: 22px; }
+
+.copyright {
+  background-color: #202221;
+  height: 50px;
+  line-height: 50px; }
+
+.copyright p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

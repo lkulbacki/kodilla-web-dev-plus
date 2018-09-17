@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta description="Projekt bootcamp'owy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodilla - 6.2 Przeróbka na SCSS</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta|Raleway:100,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="rwd.css">
+</head>
+<body>
+
+<header>
+    <nav class="container">
+        <img src="https://via.placeholder.com/215x30?text=Your+logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+<div class="slogan">
+    <h1>Here you can type <br><bold>your company <br>slogan</bold></h1>
+</div>
+    <ul class="dots">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</section>
+
+<section class="benefits">
+    <div class="container row">
+        <div class="col col-4 col-sm-12 col-md-4">
+            <div class="icon"><i class="fa fa-thermometer-full"></i></div>
+            <h2>R U hot?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col col-4 col-sm-12 col-md-4">
+            <div class="icon"><i class="fa fa-bath"></i></div>
+            <h2>Take a shower</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col col-4 col-sm-12 col-md-4">
+            <div class="icon"><i class="fa fa-cubes"></i></div>
+            <h2>better than cube</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured">
+    <div class="container row">
+        <div class="col col-1"></div>
+        <div class="col col-10">
+            <h1>featured works</h1>
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        </div>
+        <div class="col col-1"></div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container row">
+        <div class="col col-2 col-sm-4 col-md-5">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-2 col-sm-4 col-md-3">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-2 col-sm-4 col-md-4">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="clearfix visible-sm-block visible-md-block"></div>
+        <div class="col col-2 col-sm-4 col-md-4">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-4 col-sm-8 col-md-8">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+    </div>
+    <div class="container row">
+        <div class="col col-4 col-sm-8 col-md-8">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-2 col-sm-4 col-md-4">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="clearfix visible-sm-block visible-md-block"></div>
+        <div class="col col-2 col-sm-4 col-md-3">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-2 col-sm-4 col-md-5">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+        <div class="col col-2 col-sm-4 col-md-4">
+            <div class="layer"><i class="fa fa-camera-retro fa-lg"></i><i class="fa fa-search fa-lg"></i></div>
+        </div>
+    </div>
+</section>
+
+<section class="team">
+    <div class="container row">
+        <div class="col col-3 col-sm-12 col-md-6"><div class="photo"><p class="function">Boss</p></div><p class="name">Dexter Gilbert</p></div>
+        <div class="col col-3 col-sm-12 col-md-6"><div class="photo"><p class="function">Press</p></div><p class="name">Mary Collier</p></div>
+        <div class="col col-3 col-sm-12 col-md-6"><div class="photo"><p class="function">Secretary</p></div><p class="name">Stefan Morrison</p></div>
+        <div class="col col-3 col-sm-12 col-md-6"><div class="photo"><p class="function">Investor</p></div><p class="name">Bill Smith</p></div>
+    </div>
+</section>
+
+<section class="promo">
+    <div class="container row">
+        <div class="col col-4 col-md-12 col-sm-12 photo">
+            <img src="media/ipad.png" alt="ipad">
+        </div>
+        <div class="clearfix visible-sm-block visible-md-block"></div>
+        <div class="col col-8 col-md-12 col-sm-12">
+            <h2>Your awesome title</h2>
+            <div class="row">
+                <div class="col col-8 col-sm-7">
+                    <p>Bogiem czyli Stoicki, był cosiś składanego lub motywy uważane być prawdziwie cnotliwemi. Gdyby to mogło być święta, dobrotliwa i posiada wielkie skarby, o ile się od której wszystko pochodzi.</p>
+                </div>
+                <div class="col col-4 col-sm-5">
+                    <p>To możemy my to jest taka istota stać mogą. Te ostatnie zostawił tłumacz, bo ono wynika z dawnych pisarzów nieczynił takiej szczęśliwości.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="numbers">
+    <div class="container row">
+        <div class="col col-3 col-sm-6"><p class="numbers__number">455</p><p class="numbers__number_comment">followers</p></div>
+        <div class="col col-3 col-sm-6"><p class="numbers__number">1991</p><p class="numbers__number_comment">since</p></div>
+        <div class="col col-3 col-sm-6"><p class="numbers__number">806</p><p class="numbers__number_comment">happy clients</p></div>
+        <div class="col col-3 col-sm-6"><p class="numbers__number">923</p><p class="numbers__number_comment">projects</p></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container row footer__info_container">
+        <div class="col col-4 col-sm-12 footer__column1">
+            <div class="footer__header_container">
+                <h2 class="footer__header_text">about us</h2>
+                <div class="footer__header_line"></div>
+            </div>
+            <p class="footer__text">Class aptent taciti sociosqu
+            ad litora torquent per conubia nostra, per conubia nostra, per inceptos hymenaeos. Sed tempus ut, laoreet
+            sapien. Suspendisse vitae turpis vitae odio adipiscing diam eu tortor. Nullam at eros. Quisque porta est.</p>
+        </div>
+        <div class="col col-4 col-sm-12 footer__column2">
+            <div class="footer__header_container">
+                <h2 class="footer__header_text">get in touch</h2>
+                <div class="footer__header_line"></div>
+            </div>
+            <div class="row">
+                <div class="col col-4"><p class="footer__contact_name">Address:</p></div>
+                <div class="col col-8"><p class="footer__contact_detail footer__text">66 South Street</p><p class="footer__contact_detail footer__text">Window 6 Wonderland</p></div>
+            </div>
+            <div class="row">
+                <div class="col col-4"><p class="footer__contact_name">Phone:</p></div>
+                <div class="col col-8">
+                    <p class="footer__contact_detail footer__text"><a href="tel:+440875369280">+440 875369280 - Office</a></p>
+                    <p class="footer__contact_detail footer__text"><a href="tel:+440353363114">+440 353363114 - Fax</a></p></div>
+            </div>
+            <div class="row">
+                <div class="col col-4"><p class="footer__contact_name">Email:</p></div>
+                <div class="col col-8"><p class="footer__contact_detail footer__text"><a href="mailto:cant@mailthis.com">cant@mailthis.com</a></p></div>
+            </div>
+        </div>
+        <div class="col col-4 col-sm-12 footer__column3">
+            <div class="footer__header_container">
+                <h2 class="footer__header_text">social media</h2>
+                <div class="footer__header_line"></div>
+            </div>
+            <p class="footer__social_text footer__text">Just some dummy and pretty dumb text to make this part of footer look good</p>
+            <div class="footer__social_icons_container">
+                <div class="footer__social_icon"><i class="fa fa-facebook-official"></i></div>
+                <div class="footer__social_icon"><i class="fa fa-youtube"></i></div>
+                <div class="footer__social_icon"><i class="fa fa-instagram"></i></div>
+                <div class="footer__social_icon"><i class="fa fa-spotify"></i></div>
+                <div class="footer__social_icon"><i class="fa fa-twitter"></i></div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    <p>Copyright&copy; 2018</p>
+</div>
+
+</body>
+</html>

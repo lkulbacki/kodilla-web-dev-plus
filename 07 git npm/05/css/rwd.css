@@ -1,0 +1,180 @@
+@media (max-width: 767px) {
+  header {
+    display: block;
+    margin: 0 auto; }
+
+  header {
+    padding: 10px;
+    min-height: 50px;
+    height: auto; }
+
+  header > nav ul {
+    display: block;
+    float: none; }
+
+  nav li {
+    display: block;
+    text-align: center; }
+
+  .hero {
+    height: 80vh; }
+    .hero .dots {
+      left: 40%; }
+    .hero .slogan {
+      margin-top: 50vh; }
+      .hero .slogan h1 {
+        line-height: 22px;
+        font-size: 18px; }
+
+  [class*="col-sm"] {
+    float: left;
+    height: unset;
+    min-height: 100px; }
+
+  .col-sm-1 {
+    width: 8.33%; }
+
+  .col-sm-2 {
+    width: 16.66%; }
+
+  .col-sm-3 {
+    width: 25%; }
+
+  .col-sm-4 {
+    width: 33.33%; }
+
+  .col-sm-5 {
+    width: 41.66%; }
+
+  .col-sm-6 {
+    width: 50%; }
+
+  .col-sm-7 {
+    width: 58.33%; }
+
+  .col-sm-8 {
+    width: 66.66%; }
+
+  .col-sm-9 {
+    width: 75%; }
+
+  .col-sm-10 {
+    width: 83.33%; }
+
+  .col-sm-11 {
+    width: 91.66%; }
+
+  .col-sm-12 {
+    width: 100%; }
+
+  .visible-sm-block {
+    display: block !important; }
+
+  .benefits .row {
+    width: 100%; }
+
+  .container {
+    max-width: 750px; }
+
+  .team {
+    height: unset; }
+
+  .promo img {
+    height: 188px; }
+  .promo h2 {
+    font-size: 25px;
+    margin-top: 0; }
+  .promo p {
+    line-height: 20px;
+    font-size: small; }
+  .promo .container {
+    position: relative; }
+    .promo .container > div:nth-of-type(1) {
+      position: absolute;
+      bottom: -16px; }
+    .promo .container > div:nth-of-type(3) {
+      padding-bottom: 200px; }
+
+  .numbers .container {
+    height: unset; }
+
+  .footer {
+    height: unset; } }
+/*special case for non-wrapping menu*/
+@media (min-width: 993px) and (max-width: 1145px) {
+  header {
+    padding: 0 90px; } }
+@media (min-width: 768px) and (max-width: 992px) {
+  .visible-md-block {
+    display: block !important; }
+
+  .col-md-1 {
+    width: 8.33%; }
+
+  .col-md-2 {
+    width: 16.66%; }
+
+  .col-md-3 {
+    width: 25%; }
+
+  .col-md-4 {
+    width: 33.33%; }
+
+  .col-md-5 {
+    width: 41.66%; }
+
+  .col-md-6 {
+    width: 50%; }
+
+  .col-md-7 {
+    width: 58.33%; }
+
+  .col-md-8 {
+    width: 66.66%; }
+
+  .col-md-9 {
+    width: 75%; }
+
+  .col-md-10 {
+    width: 83.33%; }
+
+  .col-md-11 {
+    width: 91.66%; }
+
+  .col-md-12 {
+    width: 100%; }
+
+  .container {
+    max-width: 970px; }
+
+  header {
+    padding: 10px;
+    min-height: 50px;
+    height: auto; }
+    header img {
+      display: block;
+      margin: 0 auto; }
+    header > nav ul {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 10px auto 0 auto;
+      float: none; }
+
+  .team {
+    height: unset; }
+
+  .promo h2 {
+    font-size: 30px; }
+  .promo img {
+    height: 200px; }
+  .promo .container {
+    position: relative;
+    padding-top: 0; }
+    .promo .container > div:nth-of-type(1) {
+      position: absolute;
+      bottom: -16px; }
+    .promo .container > div:nth-of-type(3) {
+      padding-bottom: 230px; } }
+
+/*# sourceMappingURL=rwd.css.map */

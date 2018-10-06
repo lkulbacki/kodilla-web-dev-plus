@@ -459,10 +459,9 @@ header li {
 }
 
 .test {
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-
-/*# sourceMappingURL=style.css.map */
-
 /*# sourceMappingURL=style.css.map */

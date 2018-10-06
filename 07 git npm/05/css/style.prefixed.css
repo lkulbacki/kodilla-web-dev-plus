@@ -457,4 +457,11 @@ header li {
   font-size: 14px;
   text-align: center;
 }
+
+.test {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 /*# sourceMappingURL=style.prefixed.css.map */

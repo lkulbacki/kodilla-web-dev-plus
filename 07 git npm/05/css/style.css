@@ -458,6 +458,11 @@ header li {
   text-align: center;
 }
 
+.test {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

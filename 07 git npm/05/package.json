@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "npm run test:html",
+    "test:html": "nu-html-checker *.html",
+    "init-project": "npm install && mkdir -p sass css vendor images js && touch README.md index.html sass/style.scss js/script.js && curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"  },
   "keywords": [],
   "author": "",
   "license": "ISC",

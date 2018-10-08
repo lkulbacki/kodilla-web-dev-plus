@@ -15,12 +15,12 @@
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/*.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "watch": "npm-run-all build --parallel watch:sassprefixer watch:browsersync watch:test",
+    "watch": "npm-run-all build --parallel watch:sassprefixer watch:browsersync",
     "watch:sassprefixer": "onchange -d 100 sass/* -- npm-run-all -s watch:sass watch:autoprefixer",
     "watch:test": "onchange -d 100 *html -- npm run test",
     "watch:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch:autoprefixer": "autoprefixer-cli css/*.css",
-    "watch:browsersync": "browser-sync start --server --files 'css/*.css' '*.html'"
+    "watch:browsersync": "browser-sync start --server --files 'js/*.js' 'css/*.css' '*.html'"
   },
   "keywords": [],
   "author": "",

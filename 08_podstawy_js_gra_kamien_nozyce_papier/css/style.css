@@ -1,0 +1,45 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.row {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 400px;
+}
+
+.fa {
+  font-size: 100px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  color: white;
+}
+
+.fa:hover {
+  color: #2e302f;
+}
+
+.btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+}
+
+#output {
+  margin: auto 10px;
+  width: 400px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

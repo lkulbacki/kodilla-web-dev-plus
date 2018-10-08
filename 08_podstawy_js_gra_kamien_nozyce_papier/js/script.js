@@ -1,3 +1,13 @@
+var btnScissors = document.querySelector('#btn-scissors');
+var btnRock = document.querySelector('#btn-rock');
+var btnPaper = document.querySelector('#btn-paper');
+
+var outputText = document.getElementById('output');
+var outputResult = document.getElementById('result');
+
+var resultPlayer = 0;
+var resultComputer = 0;
+
 var computerMove = function () {
     var move = (Math.ceil(Math.random()*3));
     if (move === 1) {
@@ -10,7 +20,7 @@ var computerMove = function () {
 };
 
 var writeResultToOutput = function (result, playerSymbol, computerSymbol) {
-    document.getElementById('output').insertAdjacentHTML('afterbegin', (result + ': you played ' + playerSymbol + ', computer played ' + computerSymbol + '<br>'));
+    outputText.insertAdjacentHTML('afterbegin', (result + ': you played ' + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
 };
 
 var getResult = function (playerSymbol, computerSymbol) {
@@ -25,6 +35,16 @@ var getResult = function (playerSymbol, computerSymbol) {
     else return 'YOU LOST';
 };
 
+var increaseCounters = function (result) {
+  if (result === 'YOU WON') {
+      resultPlayer += 1;
+  }
+  else if (result === 'YOU LOST') {
+      resultComputer += 1;
+  };
+    outputResult.innerHTML = 'P:C --> ' + resultPlayer + ':' + resultComputer;
+};
+
 var playerMove = function(event) {
     var playerSymbol = event.currentTarget.symbol;
     var computerSymbol = computerMove();
@@ -33,12 +53,9 @@ var playerMove = function(event) {
     console.log(computerSymbol);
     console.log(result);
     writeResultToOutput(result, playerSymbol, computerSymbol);
+    increaseCounters(result);
 
 };
-
-var btnScissors = document.querySelector('#btn-scissors');
-var btnRock = document.querySelector('#btn-rock');
-var btnPaper = document.querySelector('#btn-paper');
 
 btnScissors.addEventListener('click', playerMove);
 btnRock.addEventListener('click', playerMove);

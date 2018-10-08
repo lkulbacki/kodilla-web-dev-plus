@@ -2,16 +2,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 100px auto;
-}
 
-.row {
+section.buttons .row {
   display: inline-flex;
   justify-content: space-between;
-  align-content: center;
   width: 400px;
 }
 
@@ -39,3 +33,13 @@ body {
   width: 400px;
   text-align: center;
 }
+
+section.result .row {
+  text-align: start;
+}
+
+section.result .row div {
+  display: inline-block;
+  height: 100%;
+}
+

@@ -100,4 +100,37 @@ section.result .row div {
   min-height: 30px;
   padding: 5px 30px;
 }
+
+.table-header {
+  background-color: grey;
+  color: #FFFFFF;
+}
+
+.table-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  border: 1px solid grey;
+}
+
+.table-row div:nth-child(1) {
+  width: 10px;
+}
+
+.table-row div:nth-child(2) {
+  width: 40px;
+}
+
+.table-row div:nth-child(3) {
+  width: 40px;
+}
+
+.table-row div:nth-child(4) {
+  width: 70px;
+}
+
+.table-row div:nth-child(5) {
+  width: 40px;
+}
 /*# sourceMappingURL=style.css.map */

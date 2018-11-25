@@ -11,9 +11,10 @@ elements.outputResultModalText = document.querySelector('#modal-results p');
 params.resultPlayer = 0;
 params.resultComputer = 0;
 params.gamesPlayed = 0; // games counter
-params.gamesLimit = 5; // initial value of games limit
+params.gamesLimit = 2; // initial value of games limit
 
 params.gameOn = true;
+params.progress = [];
 
 var computerMove = function () {
     var move = (Math.ceil(Math.random()*3));
@@ -61,23 +62,45 @@ var playerMove = function(event) {
         params.playerSymbol = event.currentTarget.getAttribute('data-move');
         params.computerSymbol = computerMove();
         params.result = getResult(params.playerSymbol, params.computerSymbol);
+        params.gamesPlayed++;
         console.log("P: " + params.playerSymbol + " | C: " + params.computerSymbol + " | " + params.result);
         writeResultToOutput(params.result, params.playerSymbol, params.computerSymbol);
         increaseCounters(params.result);
+        params.progress.push({
+            gamesPlayed: params.gamesPlayed,
+            playerSymbol: params.playerSymbol,
+            computerSymbol: params.computerSymbol,
+            roundResult: params.result,
+            gameResult: params.resultPlayer + ":" + params.resultComputer
+        });
         if (params.resultPlayer === params.gamesLimit) {
             writeToOutput("YOU WON THE ENTIRE GAME!!!<br>");
-            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU WON THE ENTIRE GAME!!!<br>");
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU WON THE ENTIRE GAME!!!<br>", constructProgressTable());
             params.gameOn = false;
         }
         else if (params.resultComputer === params.gamesLimit) {
             writeToOutput("YOU LOST THE ENTIRE GAME!!!<br>");
-            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU LOST THE ENTIRE GAME!!!<br>");
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU LOST THE ENTIRE GAME!!!<br>", constructProgressTable());
             params.gameOn = false;
         }
     }
     else {
         writeToOutput('GAME OVER, press New Game button to begin again<br>');
     }
+};
+
+var constructProgressTable = function () {
+  var progressTableHtml = '<div class="table-wrapper"><div class="table-row table-header"><div>#</div><div>Player</div><div>Computer</div><div>Result</div><div>Game result</div></div>';
+  for(var i=0; i<params.progress.length; i++){
+      progressTableHtml = progressTableHtml + '<div class="table-row"><div>' +
+          params.progress[i].gamesPlayed + '</div><div>' +
+          params.progress[i].playerSymbol + '</div><div>' +
+          params.progress[i].computerSymbol + '</div><div>' +
+          params.progress[i].roundResult + '</div><div>' +
+          params.progress[i].gameResult + '</div></div>';
+  }
+    progressTableHtml = progressTableHtml + '</div>';
+  return progressTableHtml;
 };
 
 // helper function for initiating a new game
@@ -101,7 +124,10 @@ var beginNewGame = function(event) {
         params.resultComputer = 0;
         elements.outputText.innerHTML = '';
         elements.outputResult.innerHTML = 'P:C --> 0:0';
+        document.querySelector("#modal-results .content").innerHTML = "<p></p>";
+        elements.outputResultModalText = document.querySelector('#modal-results p');
         document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
+        params.progress = [];
     }
     console.log('games limit:' + params.gamesLimit);
 };
@@ -112,8 +138,9 @@ var showModalById = function(modalId){
     targetModal.classList.add('show');
 };
 
-var displayResultModal = function (result, text) {
+var displayResultModal = function (result, text, progressTable) {
     elements.outputResultModalText.insertAdjacentHTML('afterbegin', (result + " | " + text));
+    elements.outputResultModalText.insertAdjacentHTML('afterend', progressTable);
     showModalById('#modal-results');
 };
 

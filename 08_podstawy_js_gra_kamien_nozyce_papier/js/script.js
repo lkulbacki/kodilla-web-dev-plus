@@ -56,7 +56,6 @@ var increaseCounters = function (result) {
 
 var playerMove = function(event) {
     if (gameOn === true) {
-        var playerSymbol = event.currentTarget.symbol;
         var computerSymbol = computerMove();
         var result = getResult(playerSymbol, computerSymbol);
         console.log(playerSymbol);
@@ -65,6 +64,7 @@ var playerMove = function(event) {
         writeResultToOutput(result, playerSymbol, computerSymbol);
         increaseCounters(result);
         if (resultPlayer === gamesLimit) {
+        var playerSymbol = event.currentTarget.getAttribute('data-move');
             writeToOutput("YOU WON THE ENTIRE GAME!!!<br>");
             gameOn = false;
         }
@@ -102,14 +102,13 @@ var beginNewGame = function(event) {
     console.log('games limit:' + gamesLimit);
 };
 
-btnScissors.addEventListener('click', playerMove);
-btnRock.addEventListener('click', playerMove);
-btnPaper.addEventListener('click', playerMove);
 btnNewGame.addEventListener('click', beginNewGame);
+var gameButtons = document.querySelectorAll('.buttons--moves .btn');
 
-btnScissors.symbol = 'scissors';
-btnRock.symbol = 'rock';
-btnPaper.symbol = 'paper';
+for(var i=0; i < gameButtons.length; i++){
+    gameButtons[i].addEventListener('click', playerMove);
+}
+
 
 outputResult.innerHTML = 'P:C --> 0:0';
 document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + gamesLimit;

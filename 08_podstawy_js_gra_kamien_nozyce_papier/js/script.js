@@ -1,17 +1,17 @@
-var btnScissors = document.querySelector('#btn-scissors');
-var btnRock = document.querySelector('#btn-rock');
-var btnPaper = document.querySelector('#btn-paper');
-var btnNewGame = document.querySelector('#btn-newgame');
+var params = Object;
+var elements = Object;
 
-var outputText = document.getElementById('output');
-var outputResult = document.getElementById('result');
+elements.btnNewGame = document.querySelector('#btn-newgame');
 
-var resultPlayer = 0;
-var resultComputer = 0;
-var gamesPlayed = 0;
-var gamesLimit = 5;
+elements.outputText = document.getElementById('output');
+elements.outputResult = document.getElementById('result');
 
-var gameOn = true;
+params.resultPlayer = 0;
+params.resultComputer = 0;
+params.gamesPlayed = 0; // games counter
+params.gamesLimit = 5; // initial value of games limit
+
+params.gameOn = true;
 
 var computerMove = function () {
     var move = (Math.ceil(Math.random()*3));
@@ -25,12 +25,12 @@ var computerMove = function () {
 };
 
 var writeResultToOutput = function (result, playerSymbol, computerSymbol) {
-    outputText.insertAdjacentHTML('afterbegin', (result + ': you played ' + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
+    elements.outputText.insertAdjacentHTML('afterbegin', (result + ': you played ' + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
 };
 
 var writeToOutput = function (text) {
-    outputText.insertAdjacentHTML('afterbegin', text);
-}
+    elements.outputText.insertAdjacentHTML('afterbegin', text);
+};
 
 var getResult = function (playerSymbol, computerSymbol) {
     if (playerSymbol === computerSymbol) {
@@ -46,36 +46,36 @@ var getResult = function (playerSymbol, computerSymbol) {
 
 var increaseCounters = function (result) {
   if (result === 'YOU WON') {
-      resultPlayer += 1;
+      params.resultPlayer += 1;
   }
   else if (result === 'YOU LOST') {
-      resultComputer += 1;
-  };
-    outputResult.innerHTML = 'P:C --> ' + resultPlayer + ':' + resultComputer;
+      params.resultComputer += 1;
+  }
+    elements.outputResult.innerHTML = 'P:C --> ' + params.resultPlayer + ':' + params.resultComputer;
 };
 
 var playerMove = function(event) {
-    if (gameOn === true) {
-        var computerSymbol = computerMove();
-        var result = getResult(playerSymbol, computerSymbol);
-        console.log(playerSymbol);
-        console.log(computerSymbol);
-        console.log(result);
-        writeResultToOutput(result, playerSymbol, computerSymbol);
-        increaseCounters(result);
-        if (resultPlayer === gamesLimit) {
-        var playerSymbol = event.currentTarget.getAttribute('data-move');
+    if (params.gameOn === true) {
+        params.playerSymbol = event.currentTarget.getAttribute('data-move');
+        params.computerSymbol = computerMove();
+        params.result = getResult(params.playerSymbol, params.computerSymbol);
+        console.log(params.playerSymbol);
+        console.log(params.computerSymbol);
+        console.log(params.result);
+        writeResultToOutput(params.result, params.playerSymbol, params.computerSymbol);
+        increaseCounters(params.result);
+        if (params.resultPlayer === params.gamesLimit) {
             writeToOutput("YOU WON THE ENTIRE GAME!!!<br>");
-            gameOn = false;
+            params.gameOn = false;
         }
-        else if (resultComputer === gamesLimit) {
+        else if (params.resultComputer === params.gamesLimit) {
             writeToOutput("YOU LOST THE ENTIRE GAME!!!<br>");
-            gameOn = false;
-        };
+            params.gameOn = false;
+        }
     }
     else {
         writeToOutput('GAME OVER, press New Game button to begin again<br>');
-    };
+    }
 };
 
 var convertToInteger = function (text) {
@@ -89,26 +89,25 @@ var convertToInteger = function (text) {
 };
 
 var beginNewGame = function(event) {
-    gamesLimit = convertToInteger(window.prompt('How many rounds to play?'));
-    if (gamesLimit !== 'undefined') {
-        gameOn = true;
-        gamesPlayed = 0;
-        resultPlayer = 0;
-        resultComputer = 0;
-        outputText.innerHTML = '';
-        outputResult.innerHTML = 'P:C --> 0:0';
-        document.getElementById('winningResult').innerHTML = "Winning rounds required: " + gamesLimit;
-    };
-    console.log('games limit:' + gamesLimit);
+    params.gamesLimit = convertToInteger(window.prompt('How many rounds to play?'));
+    if (params.gamesLimit !== 'undefined') {
+        params.gameOn = true;
+        params.gamesPlayed = 0;
+        params.resultPlayer = 0;
+        params.resultComputer = 0;
+        elements.outputText.innerHTML = '';
+        elements.outputResult.innerHTML = 'P:C --> 0:0';
+        document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
+    }
+    console.log('games limit:' + params.gamesLimit);
 };
 
-btnNewGame.addEventListener('click', beginNewGame);
-var gameButtons = document.querySelectorAll('.buttons--moves .btn');
+elements.gameButtons = document.querySelectorAll('.buttons--moves .btn');
 
-for(var i=0; i < gameButtons.length; i++){
-    gameButtons[i].addEventListener('click', playerMove);
+for(var i=0; i < elements.gameButtons.length; i++){
+    elements.gameButtons[i].addEventListener('click', playerMove);
 }
+elements.btnNewGame.addEventListener('click', beginNewGame);
 
-
-outputResult.innerHTML = 'P:C --> 0:0';
-document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + gamesLimit;
+elements.outputResult.innerHTML = 'P:C --> 0:0';
+document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + params.gamesLimit;

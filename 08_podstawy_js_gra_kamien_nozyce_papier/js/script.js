@@ -5,6 +5,8 @@ elements.btnNewGame = document.querySelector('#btn-newgame');
 
 elements.outputText = document.getElementById('output');
 elements.outputResult = document.getElementById('result');
+elements.outputResultModal = document.querySelector('#modal-results');
+elements.outputResultModalText = document.querySelector('#modal-results p');
 
 params.resultPlayer = 0;
 params.resultComputer = 0;
@@ -59,17 +61,17 @@ var playerMove = function(event) {
         params.playerSymbol = event.currentTarget.getAttribute('data-move');
         params.computerSymbol = computerMove();
         params.result = getResult(params.playerSymbol, params.computerSymbol);
-        console.log(params.playerSymbol);
-        console.log(params.computerSymbol);
-        console.log(params.result);
+        console.log("P: " + params.playerSymbol + " | C: " + params.computerSymbol + " | " + params.result);
         writeResultToOutput(params.result, params.playerSymbol, params.computerSymbol);
         increaseCounters(params.result);
         if (params.resultPlayer === params.gamesLimit) {
             writeToOutput("YOU WON THE ENTIRE GAME!!!<br>");
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU WON THE ENTIRE GAME!!!<br>");
             params.gameOn = false;
         }
         else if (params.resultComputer === params.gamesLimit) {
             writeToOutput("YOU LOST THE ENTIRE GAME!!!<br>");
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer, "YOU LOST THE ENTIRE GAME!!!<br>");
             params.gameOn = false;
         }
     }
@@ -78,16 +80,18 @@ var playerMove = function(event) {
     }
 };
 
+// helper function for initiating a new game
 var convertToInteger = function (text) {
     inputNumber = parseInt(text);
     if (typeof(inputNumber) === 'number' && !isNaN(inputNumber)) {
         return inputNumber;
     }
     else {
-        alert('Wrong value! Not a numer mate.')
+        alert('Wrong value! Not a number mate.')
     }
 };
 
+// function handling initiating a new game
 var beginNewGame = function(event) {
     params.gamesLimit = convertToInteger(window.prompt('How many rounds to play?'));
     if (params.gamesLimit !== 'undefined') {
@@ -100,6 +104,17 @@ var beginNewGame = function(event) {
         document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
     }
     console.log('games limit:' + params.gamesLimit);
+};
+
+var showModalById = function(modalId){
+    document.querySelector('#modal-overlay').classList.add('show');
+    var targetModal = document.querySelector(modalId);
+    targetModal.classList.add('show');
+};
+
+var displayResultModal = function (result, text) {
+    elements.outputResultModalText.insertAdjacentHTML('afterbegin', (result + " | " + text));
+    showModalById('#modal-results');
 };
 
 elements.gameButtons = document.querySelectorAll('.buttons--moves .btn');

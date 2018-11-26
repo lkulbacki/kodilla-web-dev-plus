@@ -19,7 +19,7 @@
 <section class="buttons">
     <div class="container">
         <div class="row">
-            <div class="btn" id="btn-newgame">New game</div>
+            <div class="btn" id="btn-newgame"><a href="#modal-newgame">New game</a></div>
         </div>
         <div class="row buttons--moves">
             <div class="btn" id="btn-scissors" data-move="scissors"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></div>
@@ -38,7 +38,7 @@
     </div>
 </section>
 <section class="modals">
-    <div class="overlay" id="modal-overlay">
+    <div class="overlay show" id="modal-overlay">
         <div class="modal" id="modal-results">
             <a href="#" class="close">x</a>
             <header>Game over!</header>
@@ -46,18 +46,19 @@
                 <p></p>
             </div>
         </div>
-        <div class="modal" id="modal-two">
+        <div class="modal show" id="modal-newgame">
             <a href="#" class="close">x</a>
-            <header>Modal two</header>
+            <header>New game</header>
             <div class="content">
-                <p>Dolor sit amet!</p>
-            </div>
-        </div>
-        <div class="modal" id="modal-three">
-            <a href="#" class="close">x</a>
-            <header>Modal three</header>
-            <div class="content">
-                <p>Dolor sit amet!</p>
+                <div class="form-field">
+                    <label for="player-name">Player: </label>
+                    <input id="player-name" type="text">
+                </div>
+                <div class="form-field">
+                    <label for="games-number">Games: </label>
+                    <input id="games-number" type="number">
+                </div>
+                <div class="btn" id="btn-newgame-start">Start</div>
             </div>
         </div>
     </div>

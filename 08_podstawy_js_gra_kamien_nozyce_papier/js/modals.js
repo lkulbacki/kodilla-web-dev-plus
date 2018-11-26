@@ -1,23 +1,20 @@
 'use strict';
 (function(){
     // open modal
-    var showModal = function(event){
-        event.preventDefault();
-        document.querySelector('#modal-overlay').classList.add('show');
-        var targetModal = document.querySelector(this.getAttribute('href'));
-        targetModal.classList.add('show');
+    // MOVED TO SCRIPT.JS
+    // var showModal = function(event){
+    //     event.preventDefault();
+    //     console.log("showModal");
+    //     document.querySelector('#modal-overlay').classList.add('show');
+    //     var targetModal = document.querySelector(this.getAttribute('href'));
+    //     targetModal.classList.add('show');
+    // };
 
-        setTimeout(function (){
-            targetModal.querySelector('header').innerHTML = 'zmieniony!';
-        }, 2000);
+    // var testScope = "xxx Scope Global?";
 
-    };
+    // SHOW NEW GAME MODAL
 
-    var testScope = "xxx Scope Global?";
-
-    // SHOW MODAL
-    //
-    // var modalLinks = document.querySelectorAll('.show-modal');
+    // var modalLinks = document.querySelectorAll('#modal-newgame');
     //
     // for(var i = 0; i < modalLinks.length; i++){
     //     modalLinks[i].addEventListener('click', showModal);
@@ -51,4 +48,4 @@
         });
     }
 
-})();
+})(); // IIFY

@@ -1,5 +1,6 @@
 'use strict';
-(function(){
+(function(window){
+    window.testVariable ='cokolwiek';
     // open modal
     // MOVED TO SCRIPT.JS
     // var showModal = function(event){
@@ -48,4 +49,4 @@
         });
     }
 
-})(); // IIFY
+})(window); // IIFY

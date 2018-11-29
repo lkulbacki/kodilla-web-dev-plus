@@ -11,5 +11,13 @@
         hash: true
     });
 
+    // enable restart button to reverse carousel to the first slide
+    var restartButtom = document.querySelector('.btn--restart');
+    restartButtom.addEventListener('click', function(event){
+       event.preventDefault();
+       console.log('restart clicked');
+       flkty.selectCell(0);
+    });
+
 
 })();

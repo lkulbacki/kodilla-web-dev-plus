@@ -23,4 +23,31 @@ body {
   background-size: cover;
 }
 
+.carousel-wrapper {
+  position: relative;
+}
+
+.btn {
+  color: $color-dark-grey;
+  width: max-content;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 30px;
+}
+
+.btn--restart {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-color: #FFFFFF;
+  &:hover {
+    background-color: $color-dark-grey;
+    color: #FFFFFF;
+  }
+}
+
 }

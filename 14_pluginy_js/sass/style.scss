@@ -50,4 +50,8 @@ body {
   }
 }
 
+.carousel__progress-bar {
+  height: 10px;
+  width: 0;
+  background-color: $color-dark-grey;
 }

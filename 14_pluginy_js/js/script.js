@@ -19,5 +19,12 @@
        flkty.selectCell(0);
     });
 
+    // animate progress bar
+    var progressBar = document.querySelector('.carousel__progress-bar');
+
+    flkty.on( 'scroll', function( progress ) {
+        progress = Math.max( 0, Math.min( 1, progress ) );
+        progressBar.style.width = ( progress * 100 + 'vw' );
+    });
 
 })();

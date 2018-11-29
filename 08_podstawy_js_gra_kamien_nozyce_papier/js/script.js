@@ -1,7 +1,17 @@
+'use strict';
 (function(window){
 
-var params = Object;
-var elements = Object;
+var params = {
+    resultPlayer: 0, // player game score
+    resultComputer: 0, // computer game score
+    gamesPlayed: 0, // finished rounds/games counter
+    gamesLimit: 2, // initial value of rounds/games limit
+    playerName: 'Player', // initial value of player name
+    gameOn: true, // parameter indicating if game is active (i.e. not finished)
+    progress: [] // array storing history of rounds
+};
+
+var elements = {};
 
 elements.btnNewGame = document.querySelector('#btn-newgame');
 elements.btnNewGameStart = document.querySelector('#btn-newgame-start');
@@ -13,15 +23,7 @@ elements.outputResult = document.getElementById('result');
 elements.outputResultModal = document.querySelector('#modal-results');
 elements.outputResultModalText = document.querySelector('#modal-results p');
 
-params.resultPlayer = 0;
-params.resultComputer = 0;
-params.gamesPlayed = 0; // games counter
-params.gamesLimit = 2; // initial value of games limit
-params.playerName = 'Player'; // initial value of player name
-
-params.gameOn = true;
-params.progress = [];
-
+// function simulating computer choice
 var computerMove = function () {
     var move = (Math.ceil(Math.random()*3));
     if (move === 1) {
@@ -42,6 +44,7 @@ var writeToOutput = function (text) {
     elements.outputText.insertAdjacentHTML('afterbegin', text);
 };
 
+// function comparing player and computer move and returning round result
 var getResult = function (playerSymbol, computerSymbol) {
     if (playerSymbol === computerSymbol) {
         return 'DRAW';
@@ -54,6 +57,7 @@ var getResult = function (playerSymbol, computerSymbol) {
     else return 'LOST';
 };
 
+// helper function increasing game results counters
 var increaseCounters = function (result) {
   if (result === 'WON') {
       params.resultPlayer += 1;
@@ -65,6 +69,7 @@ var increaseCounters = function (result) {
         + params.resultComputer;
 };
 
+// function executed to simulate player move and log all proceedings; bind main game logic
 var playerMove = function(event) {
     if (params.gameOn === true) {
         params.playerSymbol = event.currentTarget.getAttribute('data-move');
@@ -100,6 +105,7 @@ var playerMove = function(event) {
     }
 };
 
+// HTML code generation with game progress using params.progress object
 var constructProgressTable = function () {
   var progressTableHtml = '<div class="table-wrapper"><div class="table-row table-header"><div>#</div>' +
       '<div>Player</div><div>Computer</div><div>Result</div><div>Game result</div></div>';
@@ -115,9 +121,9 @@ var constructProgressTable = function () {
   return progressTableHtml;
 };
 
-// helper function for initiating a new game
+// helper function for initiating a new game - converting input value to integer
 var convertToInteger = function (text) {
-    inputNumber = parseInt(text);
+    var inputNumber = parseInt(text);
     if (typeof(inputNumber) === 'number' && !isNaN(inputNumber)) {
         return inputNumber;
     }
@@ -128,9 +134,9 @@ var convertToInteger = function (text) {
 };
 
 // function handling initiating a new game
+// actions like resetting counters, outputs, setting up new parameters
 var beginNewGame = function(event) {
     event.preventDefault();
-    console.log('begin new game');
     params.gamesLimit = convertToInteger(elements.inputGamesNumber.value);
     if (elements.inputPlayerName.value !== 'undefined' && elements.inputPlayerName.value !== '') {
         params.playerName = elements.inputPlayerName.value;

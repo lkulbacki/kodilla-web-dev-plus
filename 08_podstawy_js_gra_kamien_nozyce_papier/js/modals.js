@@ -1,6 +1,6 @@
 'use strict';
 (function(window){
-    window.testVariable ='cokolwiek';
+    window.modals = Object;
     // open modal
     // MOVED TO SCRIPT.JS
     // var showModal = function(event){
@@ -23,7 +23,7 @@
 
     // CLOSE MODAL
 
-    var hideModal = function(event){
+    window.modals.hideModal = function(event){
         event.preventDefault();
         document.querySelector('#modal-overlay').classList.remove('show');
     };
@@ -32,12 +32,12 @@
     var closeButtons = document.querySelectorAll('.modal .close');
 
     for(var i = 0; i < closeButtons.length; i++){
-        closeButtons[i].addEventListener('click', hideModal);
+        closeButtons[i].addEventListener('click', window.modals.hideModal);
     }
 
     // using overlay click
 
-    document.querySelector('#modal-overlay').addEventListener('click', hideModal);
+    document.querySelector('#modal-overlay').addEventListener('click', window.modals.hideModal);
 
     // propagation control
 
@@ -48,5 +48,24 @@
             event.stopPropagation();
         });
     }
+
+    window.modals.showModalById = function(modalId){
+        document.querySelector('#modal-overlay').classList.add('show');
+        var targetModal = document.querySelector(modalId);
+        targetModal.classList.add('show');
+    };
+
+    window.modals.closeModalById = function(modalId){
+        document.querySelector('#modal-overlay').classList.remove('show');
+        var targetModal = document.querySelector(modalId);
+        targetModal.classList.remove('show');
+    };
+
+    window.modals.showModal = function(event){
+        event.preventDefault();
+        document.querySelector('#modal-overlay').classList.add('show');
+        var targetModal = document.querySelector(this.querySelector('a').getAttribute('href'));
+        targetModal.classList.add('show');
+    };
 
 })(window); // IIFY

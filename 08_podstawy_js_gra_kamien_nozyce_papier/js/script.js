@@ -1,3 +1,5 @@
+(function(window){
+
 var params = Object;
 var elements = Object;
 
@@ -32,7 +34,8 @@ var computerMove = function () {
 };
 
 var writeResultToOutput = function (result, playerSymbol, computerSymbol) {
-    elements.outputText.insertAdjacentHTML('afterbegin', (result + ': ' + params.playerName + ' played ' + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
+    elements.outputText.insertAdjacentHTML('afterbegin', (result + ': ' + params.playerName + ' played '
+        + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
 };
 
 var writeToOutput = function (text) {
@@ -58,7 +61,8 @@ var increaseCounters = function (result) {
   else if (result === 'LOST') {
       params.resultComputer += 1;
   }
-    elements.outputResult.innerHTML = params.playerName + ':Computer | ' + params.resultPlayer + ':' + params.resultComputer;
+    elements.outputResult.innerHTML = params.playerName + ':Computer | ' + params.resultPlayer + ':'
+        + params.resultComputer;
 };
 
 var playerMove = function(event) {
@@ -67,7 +71,8 @@ var playerMove = function(event) {
         params.computerSymbol = computerMove();
         params.result = getResult(params.playerSymbol, params.computerSymbol);
         params.gamesPlayed++;
-        console.log(params.playerName + ": " + params.playerSymbol + " | Computer: " + params.computerSymbol + " | " + params.result);
+        console.log(params.playerName + ": " + params.playerSymbol + " | Computer: " + params.computerSymbol + " | "
+            + params.result);
         writeResultToOutput(params.result, params.playerSymbol, params.computerSymbol);
         increaseCounters(params.result);
         params.progress.push({
@@ -79,12 +84,14 @@ var playerMove = function(event) {
         });
         if (params.resultPlayer === params.gamesLimit) {
             writeToOutput('<span class="green">' + params.playerName + ' WON THE ENTIRE GAME!!!<br></span>');
-            displayResultModal(params.resultPlayer + ":" + params.resultComputer, '<span class="green">YOU WON THE ENTIRE GAME!!!<br></span>', constructProgressTable());
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer,
+                '<span class="green">YOU WON THE ENTIRE GAME!!!<br></span>', constructProgressTable());
             params.gameOn = false;
         }
         else if (params.resultComputer === params.gamesLimit) {
             writeToOutput('<span class="red">' + params.playerName + ' LOST THE ENTIRE GAME!!!<br></span>');
-            displayResultModal(params.resultPlayer + ":" + params.resultComputer, '<span class="red">YOU LOST THE ENTIRE GAME!!!<br></span>', constructProgressTable());
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer,
+                '<span class="red">YOU LOST THE ENTIRE GAME!!!<br></span>', constructProgressTable());
             params.gameOn = false;
         }
     }
@@ -94,7 +101,8 @@ var playerMove = function(event) {
 };
 
 var constructProgressTable = function () {
-  var progressTableHtml = '<div class="table-wrapper"><div class="table-row table-header"><div>#</div><div>Player</div><div>Computer</div><div>Result</div><div>Game result</div></div>';
+  var progressTableHtml = '<div class="table-wrapper"><div class="table-row table-header"><div>#</div>' +
+      '<div>Player</div><div>Computer</div><div>Result</div><div>Game result</div></div>';
   for(var i=0; i<params.progress.length; i++){
       progressTableHtml = progressTableHtml + '<div class="table-row"><div>' +
           params.progress[i].gamesPlayed + '</div><div>' +
@@ -141,26 +149,14 @@ var beginNewGame = function(event) {
         document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
         params.progress = [];
     }
-    closeModalById('#modal-newgame');
-
+    window.modals.closeModalById('#modal-newgame');
 };
 
-var showModalById = function(modalId){
-    document.querySelector('#modal-overlay').classList.add('show');
-    var targetModal = document.querySelector(modalId);
-    targetModal.classList.add('show');
-};
-
-var closeModalById = function(modalId){
-    document.querySelector('#modal-overlay').classList.remove('show');
-    var targetModal = document.querySelector(modalId);
-    targetModal.classList.remove('show');
-};
 
 var displayResultModal = function (result, text, progressTable) {
     elements.outputResultModalText.insertAdjacentHTML('afterbegin', (result + " | " + text));
     elements.outputResultModalText.insertAdjacentHTML('afterend', progressTable);
-    showModalById('#modal-results');
+    window.modals.showModalById('#modal-results');
 };
 
 elements.gameButtons = document.querySelectorAll('.buttons--moves .btn');
@@ -169,15 +165,10 @@ for(var i=0; i < elements.gameButtons.length; i++){
     elements.gameButtons[i].addEventListener('click', playerMove);
 }
 
-var showModal = function(event){
-    event.preventDefault();
-    document.querySelector('#modal-overlay').classList.add('show');
-    var targetModal = document.querySelector(this.querySelector('a').getAttribute('href'));
-    targetModal.classList.add('show');
-};
-
-elements.btnNewGame.addEventListener('click', showModal);
+elements.btnNewGame.addEventListener('click', window.modals.showModal);
 elements.btnNewGameStart.addEventListener('click', beginNewGame);
 
 elements.outputResult.innerHTML = params.playerName + ':Computer | 0:0';
 document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + params.gamesLimit;
+
+})(window);

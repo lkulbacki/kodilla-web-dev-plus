@@ -1,9 +1,26 @@
 $font: "Nunito", Helvetica, Sans-Serif;
-
+$color-dark-grey: #202020;
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: $font;
+  background-color: #BBBBBB;
+}
+
+.carousel {
+  background-color: #BBBBBB;
+  min-height: 250px;
+  height: 50vh;
+  width: 100%;
+}
+
+.carousel__container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background-size: cover;
+}
+
 }

@@ -126,6 +126,8 @@ section.result .row div {
 .modal .content {
   min-height: 30px;
   padding: 5px 30px;
+  overflow: scroll;
+  height: 100%;
 }
 
 .table-header {

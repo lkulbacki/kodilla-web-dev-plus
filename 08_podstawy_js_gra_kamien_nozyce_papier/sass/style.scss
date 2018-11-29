@@ -118,6 +118,8 @@ section.result .row div {
   .content {
     min-height: 30px;
     padding: 5px 30px;
+    overflow: scroll;
+    height: 100%;
   }
 }
 

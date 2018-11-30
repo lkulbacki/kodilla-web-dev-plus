@@ -1,9 +1,22 @@
 'use strict';
 (function(){
-    var elem = document.querySelector('.carousel');
+    // select main carousel element
+    var carousel = document.querySelector('.carousel');
+
+    // render Moustache template
+    var templateCarouselSlides = document.getElementById('template-carousel-slides').innerHTML;
+    Mustache.parse(templateCarouselSlides);
+    var slidesHTML = '';
+
+    for (var i=0; i < carouselSlidesData.length; i++) {
+        slidesHTML += Mustache.render(templateCarouselSlides, carouselSlidesData[i]);
+    }
+
+    carousel.insertAdjacentHTML('afterBegin', slidesHTML);
 
     // initialize flickity carousel
-    var flkty = new Flickity( elem, {
+
+    var flkty = new Flickity( carousel, {
         // options
         imagesLoaded: true,
         pageDots: false,

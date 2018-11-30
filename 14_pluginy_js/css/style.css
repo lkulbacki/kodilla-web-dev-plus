@@ -4,11 +4,15 @@
 
 body {
   font-family: "Nunito", Helvetica, Sans-Serif;
-  background-color: #BBBBBB;
+  background-color: #8894a2;
+}
+
+body > h1 {
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .carousel {
-  background-color: #BBBBBB;
   min-height: 250px;
   height: 50vh;
   width: 100%;
@@ -19,6 +23,7 @@ body {
   height: 100%;
   margin: 0 auto;
   background-size: cover;
+  padding: 20px;
 }
 
 .carousel-wrapper {
@@ -55,5 +60,14 @@ body {
   height: 10px;
   width: 0;
   background-color: #202020;
+}
+
+.carousel__slide-title {
+  background-color: #FFFFFF;
+}
+
+.carousel__slide-description {
+  background-color: #FFFFFF;
+  text-align: right;
 }
 /*# sourceMappingURL=style.css.map */

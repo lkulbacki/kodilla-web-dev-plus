@@ -1,16 +1,21 @@
 $font: "Nunito", Helvetica, Sans-Serif;
 $color-dark-grey: #202020;
+$color-white: #FFFFFF;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: $font;
-  background-color: #BBBBBB;
+  background-color: #8894a2;
+  > h1 {
+    text-align: center;
+    color: $color-white;
+  }
 }
 
 .carousel {
-  background-color: #BBBBBB;
   min-height: 250px;
   height: 50vh;
   width: 100%;
@@ -21,6 +26,7 @@ body {
   height: 100%;
   margin: 0 auto;
   background-size: cover;
+  padding: 20px;
 }
 
 .carousel-wrapper {
@@ -43,10 +49,10 @@ body {
   position: absolute;
   bottom: 20px;
   left: 10px;
-  background-color: #FFFFFF;
+  background-color: $color-white;
   &:hover {
     background-color: $color-dark-grey;
-    color: #FFFFFF;
+    color: $color-white;
   }
 }
 
@@ -54,4 +60,13 @@ body {
   height: 10px;
   width: 0;
   background-color: $color-dark-grey;
+}
+
+.carousel__slide-title {
+  background-color: $color-white;
+}
+
+.carousel__slide-description {
+  background-color: $color-white;
+  text-align: right;
 }

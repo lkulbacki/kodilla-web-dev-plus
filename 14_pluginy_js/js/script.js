@@ -43,13 +43,17 @@
 
     // Initialize and add the map
     window.initMap = function () {
-        // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
-        // The map, centered at Uluru
+        // The map, centered at first slide location
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
-    }
+            document.getElementById('map'), {zoom: 7, center: carouselSlidesData[0].coords});
+
+        // add map markers
+        for(var i=0; i < carouselSlidesData.length; i++){
+            var marker = new google.maps.Marker({
+                position: carouselSlidesData[i].coords,
+                map: map
+            });
+        }
+    };
 
 })(window);

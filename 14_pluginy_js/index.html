@@ -21,6 +21,8 @@
     <div class="btn btn--restart">Restart</div>
 </div>
 
+<div id="map"></div>
+
 <script id="template-carousel-slides" type="x-tmpl-mustache">
     <div class="carousel__container" id="carousel_{{number}}" style="background-image: url('{{{image}}}')">
         <h1 class="carousel__slide-title">{{title}}</h1>
@@ -67,6 +69,9 @@
             description: '<p class="carousel__slide-description">Bo taki ma jakiś <strong>koci klimat</strong></p>'
         },
     ]
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWNQH4PmP-da_9rlliek5bout9KAJa7h4&callback=initMap">
 </script>
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/flickity-hash.js"></script>

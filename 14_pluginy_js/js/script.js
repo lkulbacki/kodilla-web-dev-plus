@@ -8,7 +8,8 @@
         imagesLoaded: true,
         pageDots: false,
         percentPosition: false,
-        hash: true
+        hash: true,
+        wrapAround: true
     });
 
     // enable restart button to reverse carousel to the first slide

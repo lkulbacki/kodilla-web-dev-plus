@@ -44,16 +44,36 @@
     // Initialize and add the map
     window.initMap = function () {
         // The map, centered at first slide location
+
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 7, center: carouselSlidesData[0].coords});
+            document.getElementById('map'), {zoom: 4, center: carouselSlidesData[0].coords});
 
         // add map markers
         for(var i=0; i < carouselSlidesData.length; i++){
+            var coordinates = carouselSlidesData[i].coords;
             var marker = new google.maps.Marker({
-                position: carouselSlidesData[i].coords,
+                position: coordinates,
                 map: map
             });
+
+            // to dynamically set iterator value to the functions, anonymous function must be used
+            // otherwise last value of operator is always being set
+            // http://bonsaiden.github.io/JavaScript-Garden/#function.closures
+            (function(j){
+                marker.addListener('click', function(){
+                    flkty.selectCell(j);
+                    console.log(j);
+                });
+            })(i);
         }
+
+        // add action changing active marker for the one referenced by carousel
+        flkty.on( 'change', function( index ) {
+            var coordinates = carouselSlidesData[index].coords;
+            map.panTo(coordinates);
+            map.setZoom(7);
+        });
+
     };
 
 })(window);

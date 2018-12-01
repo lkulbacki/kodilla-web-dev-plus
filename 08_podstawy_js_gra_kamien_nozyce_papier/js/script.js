@@ -144,16 +144,7 @@ var beginNewGame = function(event) {
         params.playerName = 'Player';
     }
     if (params.gamesLimit !== 'undefined') {
-        params.gameOn = true;
-        params.gamesPlayed = 0;
-        params.resultPlayer = 0;
-        params.resultComputer = 0;
-        elements.outputText.innerHTML = '';
-        elements.outputResult.innerHTML = params.playerName + ':Computer | 0:0';
-        document.querySelector("#modal-results .content").innerHTML = "<p></p>";
-        elements.outputResultModalText = document.querySelector('#modal-results p');
-        document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
-        params.progress = [];
+        resetGameParameters();
     }
     window.modals.closeModalById('#modal-newgame');
 };
@@ -163,6 +154,19 @@ var displayResultModal = function (result, text, progressTable) {
     elements.outputResultModalText.insertAdjacentHTML('afterbegin', (result + " | " + text));
     elements.outputResultModalText.insertAdjacentHTML('afterend', progressTable);
     window.modals.showModalById('#modal-results');
+};
+
+var resetGameParameters = function(){
+    params.gameOn = true;
+    params.gamesPlayed = 0;
+    params.resultPlayer = 0;
+    params.resultComputer = 0;
+    elements.outputText.innerHTML = '';
+    elements.outputResult.innerHTML = params.playerName + ':Computer | 0:0';
+    document.querySelector("#modal-results .content").innerHTML = "<p></p>";
+    elements.outputResultModalText = document.querySelector('#modal-results p');
+    document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
+    params.progress = [];
 };
 
 elements.gameButtons = document.querySelectorAll('.buttons--moves .btn');

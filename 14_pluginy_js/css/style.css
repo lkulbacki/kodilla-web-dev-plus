@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", Helvetica, Sans-Serif;
+  background-color: #8894a2;
+}
+
+body > h1 {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.carousel {
+  min-height: 250px;
+  height: 50vh;
+  width: 100%;
+}
+
+.carousel__container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background-size: cover;
+  padding: 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.btn {
+  color: #202020;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 30px;
+}
+
+.btn--restart {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-color: #FFFFFF;
+}
+
+.btn--restart:hover {
+  background-color: #202020;
+  color: #FFFFFF;
+}
+
+.carousel__progress-bar {
+  height: 10px;
+  width: 0;
+  background-color: #202020;
+}
+
+.carousel__slide-title {
+  background-color: #FFFFFF;
+}
+
+.carousel__slide-description {
+  background-color: #FFFFFF;
+  text-align: right;
+}
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Kodilla - 14 - plugins</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootcamp Project">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Week 14</h1>
+<div class="carousel-wrapper">
+    <div class="carousel">
+        <!-- HERE COMES MUSTACHE TEMPLATE #template-carousel-slides -->
+    </div>
+    <div class="carousel__progress-bar"></div>
+    <div class="btn btn--restart">Restart</div>
+</div>
+
+<div id="map"></div>
+
+<script id="template-carousel-slides" type="x-tmpl-mustache">
+    <div class="carousel__container" id="carousel_{{number}}" style="background-image: url('{{{image}}}')">
+        <h1 class="carousel__slide-title">{{title}}</h1>
+        {{{description}}}
+    </div>
+</script>
+
+<script>
+    var carouselSlidesData = [
+        {
+            number: 1,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg',
+            title: 'Valencia',
+            description: '<p class="carousel__slide-description">Full of <strong>juicy</strong> oranges</p>',
+            coords: {lat: 39.469906, lng: -0.376288}
+        },
+        {
+            number: 2,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg',
+            title: 'Białka Tatrzańska',
+            description: '<p class="carousel__slide-description">Relax in <strong>warm</strong> spring waters</p>',
+            coords: {lat: 49.394560, lng: 20.104990}
+        },
+        {
+            number: 3,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg',
+            title: 'Wherever',
+            description: '<p class="carousel__slide-description">Wszyscy mieszkamy pod <strong>tym samym</strong> niebem</p>',
+            coords: {lat: 13.463209, lng: -16.584909}
+        },
+        {
+            number: 4,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg',
+            title: 'New York',
+            description: '<p class="carousel__slide-description">Dlaczego nie mogłem <strong>jak Kevin</strong> pojechać sam do Nowego Yorku?</p>',
+            coords: {lat: 40.785091, lng: -73.968285}
+        },
+        {
+            number: 5,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg',
+            title: 'Paris',
+            description: '<p class="carousel__slide-description"><strong>W lipcu.</strong> Serio. <strong>Wbrew pozorom</strong> to najbardziej deszczowy miesiąc.</p>',
+            coords: {lat: 48.856613, lng: 2.352222}
+        },
+        {
+            number: 6,
+            image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg',
+            title: 'Żoliborz',
+            description: '<p class="carousel__slide-description">Bo taki ma jakiś <strong>koci klimat</strong></p>',
+            coords: {lat: 52.267970, lng: 20.985810}
+        },
+    ]
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWNQH4PmP-da_9rlliek5bout9KAJa7h4&callback=initMap">
+</script>
+<script src="vendor/flickity.pkgd.min.js"></script>
+<script src="vendor/flickity-hash.js"></script>
+<script src="vendor/mustache.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

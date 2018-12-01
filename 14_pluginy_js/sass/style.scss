@@ -1,0 +1,77 @@
+$font: "Nunito", Helvetica, Sans-Serif;
+$color-dark-grey: #202020;
+$color-white: #FFFFFF;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background-color: #8894a2;
+  > h1 {
+    text-align: center;
+    color: $color-white;
+  }
+}
+
+.carousel {
+  min-height: 250px;
+  height: 50vh;
+  width: 100%;
+}
+
+.carousel__container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background-size: cover;
+  padding: 20px;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.btn {
+  color: $color-dark-grey;
+  width: max-content;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 30px;
+}
+
+.btn--restart {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-color: $color-white;
+  &:hover {
+    background-color: $color-dark-grey;
+    color: $color-white;
+  }
+}
+
+.carousel__progress-bar {
+  height: 10px;
+  width: 0;
+  background-color: $color-dark-grey;
+}
+
+.carousel__slide-title {
+  background-color: $color-white;
+}
+
+.carousel__slide-description {
+  background-color: $color-white;
+  text-align: right;
+}
+
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}

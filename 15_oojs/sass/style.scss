@@ -16,3 +16,17 @@ body {
   font-family: $font;
   background-color: $color-green-verylight;
 }
+
+.column-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.column {
+  width: 225px;
+  border: 1px solid springgreen;
+  height: 100%;
+}
+

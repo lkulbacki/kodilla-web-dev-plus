@@ -1,18 +1,29 @@
-var btnScissors = document.querySelector('#btn-scissors');
-var btnRock = document.querySelector('#btn-rock');
-var btnPaper = document.querySelector('#btn-paper');
-var btnNewGame = document.querySelector('#btn-newgame');
+'use strict';
+(function(window){
 
-var outputText = document.getElementById('output');
-var outputResult = document.getElementById('result');
+var params = {
+    resultPlayer: 0, // player game score
+    resultComputer: 0, // computer game score
+    gamesPlayed: 0, // finished rounds/games counter
+    gamesLimit: 2, // initial value of rounds/games limit
+    playerName: 'Player', // initial value of player name
+    gameOn: true, // parameter indicating if game is active (i.e. not finished)
+    progress: [] // array storing history of rounds
+};
 
-var resultPlayer = 0;
-var resultComputer = 0;
-var gamesPlayed = 0;
-var gamesLimit = 5;
+var elements = {};
 
-var gameOn = true;
+elements.btnNewGame = document.querySelector('#btn-newgame');
+elements.btnNewGameStart = document.querySelector('#btn-newgame-start');
+elements.inputPlayerName = document.querySelector('#player-name');
+elements.inputGamesNumber = document.querySelector('#games-number');
 
+elements.outputText = document.getElementById('output');
+elements.outputResult = document.getElementById('result');
+elements.outputResultModal = document.querySelector('#modal-results');
+elements.outputResultModalText = document.querySelector('#modal-results p');
+
+// function simulating computer choice
 var computerMove = function () {
     var move = (Math.ceil(Math.random()*3));
     if (move === 1) {
@@ -25,13 +36,15 @@ var computerMove = function () {
 };
 
 var writeResultToOutput = function (result, playerSymbol, computerSymbol) {
-    outputText.insertAdjacentHTML('afterbegin', (result + ': you played ' + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
+    elements.outputText.insertAdjacentHTML('afterbegin', (result + ': ' + params.playerName + ' played '
+        + playerSymbol.toUpperCase() + ', computer played ' + computerSymbol.toUpperCase() + '<br>'));
 };
 
 var writeToOutput = function (text) {
-    outputText.insertAdjacentHTML('afterbegin', text);
-}
+    elements.outputText.insertAdjacentHTML('afterbegin', text);
+};
 
+// function comparing player and computer move and returning round result
 var getResult = function (playerSymbol, computerSymbol) {
     if (playerSymbol === computerSymbol) {
         return 'DRAW';
@@ -39,77 +52,133 @@ var getResult = function (playerSymbol, computerSymbol) {
     else if ((playerSymbol === 'paper' && computerSymbol === 'rock') ||
         (playerSymbol === 'rock' && computerSymbol === 'scissors') ||
         (playerSymbol === 'scissors' && computerSymbol === 'paper')) {
-        return 'YOU WON';
+        return 'WON';
     }
-    else return 'YOU LOST';
+    else return 'LOST';
 };
 
+// helper function increasing game results counters
 var increaseCounters = function (result) {
-  if (result === 'YOU WON') {
-      resultPlayer += 1;
+  if (result === 'WON') {
+      params.resultPlayer += 1;
   }
-  else if (result === 'YOU LOST') {
-      resultComputer += 1;
-  };
-    outputResult.innerHTML = 'P:C --> ' + resultPlayer + ':' + resultComputer;
+  else if (result === 'LOST') {
+      params.resultComputer += 1;
+  }
+    elements.outputResult.innerHTML = params.playerName + ':Computer | ' + params.resultPlayer + ':'
+        + params.resultComputer;
 };
 
+// function executed to simulate player move and log all proceedings; bind main game logic
 var playerMove = function(event) {
-    if (gameOn === true) {
-        var playerSymbol = event.currentTarget.symbol;
-        var computerSymbol = computerMove();
-        var result = getResult(playerSymbol, computerSymbol);
-        console.log(playerSymbol);
-        console.log(computerSymbol);
-        console.log(result);
-        writeResultToOutput(result, playerSymbol, computerSymbol);
-        increaseCounters(result);
-        if (resultPlayer === gamesLimit) {
-            writeToOutput("YOU WON THE ENTIRE GAME!!!<br>");
-            gameOn = false;
+    if (params.gameOn === true) {
+        params.playerSymbol = event.currentTarget.getAttribute('data-move');
+        params.computerSymbol = computerMove();
+        params.result = getResult(params.playerSymbol, params.computerSymbol);
+        params.gamesPlayed++;
+        console.log(params.playerName + ": " + params.playerSymbol + " | Computer: " + params.computerSymbol + " | "
+            + params.result);
+        writeResultToOutput(params.result, params.playerSymbol, params.computerSymbol);
+        increaseCounters(params.result);
+        params.progress.push({
+            gamesPlayed: params.gamesPlayed,
+            playerSymbol: params.playerSymbol,
+            computerSymbol: params.computerSymbol,
+            roundResult: params.result,
+            gameResult: params.resultPlayer + ":" + params.resultComputer
+        });
+        if (params.resultPlayer === params.gamesLimit) {
+            writeToOutput('<span class="green">' + params.playerName + ' WON THE ENTIRE GAME!!!<br></span>');
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer,
+                '<span class="green">YOU WON THE ENTIRE GAME!!!<br></span>', constructProgressTable());
+            params.gameOn = false;
         }
-        else if (resultComputer === gamesLimit) {
-            writeToOutput("YOU LOST THE ENTIRE GAME!!!<br>");
-            gameOn = false;
-        };
+        else if (params.resultComputer === params.gamesLimit) {
+            writeToOutput('<span class="red">' + params.playerName + ' LOST THE ENTIRE GAME!!!<br></span>');
+            displayResultModal(params.resultPlayer + ":" + params.resultComputer,
+                '<span class="red">YOU LOST THE ENTIRE GAME!!!<br></span>', constructProgressTable());
+            params.gameOn = false;
+        }
     }
     else {
-        writeToOutput('GAME OVER, press New Game button to begin again<br>');
-    };
+        writeToOutput('<span class="red">GAME OVER</span>, press New Game button to begin again<br>');
+    }
 };
 
+// HTML code generation with game progress using params.progress object
+var constructProgressTable = function () {
+  var progressTableHtml = '<div class="table-wrapper"><div class="table-row table-header"><div>#</div>' +
+      '<div>Player</div><div>Computer</div><div>Result</div><div>Game result</div></div>';
+  for(var i=0; i<params.progress.length; i++){
+      progressTableHtml = progressTableHtml + '<div class="table-row"><div>' +
+          params.progress[i].gamesPlayed + '</div><div>' +
+          params.progress[i].playerSymbol + '</div><div>' +
+          params.progress[i].computerSymbol + '</div><div>' +
+          params.progress[i].roundResult + '</div><div>' +
+          params.progress[i].gameResult + '</div></div>';
+  }
+    progressTableHtml = progressTableHtml + '</div>';
+  return progressTableHtml;
+};
+
+// helper function for initiating a new game - converting input value to integer
 var convertToInteger = function (text) {
-    inputNumber = parseInt(text);
+    var inputNumber = parseInt(text);
     if (typeof(inputNumber) === 'number' && !isNaN(inputNumber)) {
         return inputNumber;
     }
     else {
-        alert('Wrong value! Not a numer mate.')
+        alert('Wrong value! Not a proper games number. Setting 5 rounds.');
+        return 5;
     }
 };
 
+// function handling initiating a new game
+// actions like resetting counters, outputs, setting up new parameters
 var beginNewGame = function(event) {
-    gamesLimit = convertToInteger(window.prompt('How many rounds to play?'));
-    if (gamesLimit !== 'undefined') {
-        gameOn = true;
-        gamesPlayed = 0;
-        resultPlayer = 0;
-        resultComputer = 0;
-        outputText.innerHTML = '';
-        outputResult.innerHTML = 'P:C --> 0:0';
-        document.getElementById('winningResult').innerHTML = "Winning rounds required: " + gamesLimit;
-    };
-    console.log('games limit:' + gamesLimit);
+    event.preventDefault();
+    params.gamesLimit = convertToInteger(elements.inputGamesNumber.value);
+    if (elements.inputPlayerName.value !== 'undefined' && elements.inputPlayerName.value !== '') {
+        params.playerName = elements.inputPlayerName.value;
+    } else {
+        params.playerName = 'Player';
+    }
+    if (params.gamesLimit !== 'undefined') {
+        resetGameParameters();
+    }
+    window.modals.closeModalById('#modal-newgame');
 };
 
-btnScissors.addEventListener('click', playerMove);
-btnRock.addEventListener('click', playerMove);
-btnPaper.addEventListener('click', playerMove);
-btnNewGame.addEventListener('click', beginNewGame);
 
-btnScissors.symbol = 'scissors';
-btnRock.symbol = 'rock';
-btnPaper.symbol = 'paper';
+var displayResultModal = function (result, text, progressTable) {
+    elements.outputResultModalText.insertAdjacentHTML('afterbegin', (result + " | " + text));
+    elements.outputResultModalText.insertAdjacentHTML('afterend', progressTable);
+    window.modals.showModalById('#modal-results');
+};
 
-outputResult.innerHTML = 'P:C --> 0:0';
-document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + gamesLimit;
+var resetGameParameters = function(){
+    params.gameOn = true;
+    params.gamesPlayed = 0;
+    params.resultPlayer = 0;
+    params.resultComputer = 0;
+    elements.outputText.innerHTML = '';
+    elements.outputResult.innerHTML = params.playerName + ':Computer | 0:0';
+    document.querySelector("#modal-results .content").innerHTML = "<p></p>";
+    elements.outputResultModalText = document.querySelector('#modal-results p');
+    document.getElementById('winningResult').innerHTML = "Winning rounds required: " + params.gamesLimit;
+    params.progress = [];
+};
+
+elements.gameButtons = document.querySelectorAll('.buttons--moves .btn');
+
+for(var i=0; i < elements.gameButtons.length; i++){
+    elements.gameButtons[i].addEventListener('click', playerMove);
+}
+
+elements.btnNewGame.addEventListener('click', window.modals.showModal);
+elements.btnNewGameStart.addEventListener('click', beginNewGame);
+
+elements.outputResult.innerHTML = params.playerName + ':Computer | 0:0';
+document.getElementById('winningResult').innerHTML = "<br>Winning rounds required: " + params.gamesLimit;
+
+})(window);

@@ -4,16 +4,17 @@ body {
 
 
 section.buttons .row {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
-  width: 400px;
+  width: 460px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .fa {
   font-size: 100px;
   width: 100px;
   height: 100px;
-  margin: 10px;
   color: white;
 }
 
@@ -26,16 +27,36 @@ section.buttons .row {
   height: 120px;
   border-radius: 10px;
   background-color: cornflowerblue;
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  &:hover a {
+    color: black;
+  }
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+#btn-newgame {
+  padding-top: 48px;
 }
 
 #output {
-  margin: auto 10px;
+  margin: 15px;
   width: 400px;
   text-align: center;
 }
 
 section.result .row {
   text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 }
 
 section.result .row div {
@@ -43,3 +64,106 @@ section.result .row div {
   height: 100%;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+
+  &.show {
+    display: block;
+  }
+}
+
+.modal {
+  display: none;
+  background: #fff;
+  width: 80%;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 5px;
+
+  &.show {
+    display: block;
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px 10px;
+    color: #000;
+    text-decoration: none;
+    width: 40px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 30px;
+  }
+
+  header {
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 30px;
+  }
+
+  .content {
+    min-height: 30px;
+    padding: 5px 30px;
+    overflow: scroll;
+    height: 100%;
+  }
+}
+
+// results table styling
+.table-wrapper {
+
+}
+.table-header {
+  background-color: grey;
+  color: #FFFFFF;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+
+  div:nth-child(1) {
+    width: 10px;
+  }
+  div:nth-child(2) {
+    width: 40px;
+  }
+  div:nth-child(3) {
+    width: 40px;
+  }
+  div:nth-child(4) {
+    width: 70px;
+  }
+  div:nth-child(5) {
+    width: 40px;
+  }
+}
+
+#modal-newgame {
+  .btn {
+    height: 35px;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: forestgreen;
+}

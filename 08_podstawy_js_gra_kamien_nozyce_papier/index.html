@@ -19,12 +19,12 @@
 <section class="buttons">
     <div class="container">
         <div class="row">
-            <div class="btn" id="btn-newgame">New game</div>
+            <div class="btn" id="btn-newgame"><a href="#modal-newgame">New game</a></div>
         </div>
-        <div class="row">
-            <div class="btn" id="btn-scissors"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></div>
-            <div class="btn" id="btn-rock"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></div>
-            <div class="btn" id="btn-paper"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></div>
+        <div class="row buttons--moves">
+            <div class="btn" id="btn-scissors" data-move="scissors"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></div>
+            <div class="btn" id="btn-rock" data-move="rock"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></div>
+            <div class="btn" id="btn-paper" data-move="paper"><i class="fa fa-hand-paper-o" aria-hidden="true"></i></div>
         </div>
     </div>
 </section>
@@ -37,6 +37,33 @@
         </div>
     </div>
 </section>
+<section class="modals">
+    <div class="overlay" id="modal-overlay">
+        <div class="modal" id="modal-results">
+            <a href="#" class="close">x</a>
+            <header>Game over!</header>
+            <div class="content">
+                <p></p>
+            </div>
+        </div>
+        <div class="modal" id="modal-newgame">
+            <a href="#" class="close">x</a>
+            <header>New game</header>
+            <div class="content">
+                <div class="form-field">
+                    <label for="player-name">Player: </label>
+                    <input id="player-name" type="text">
+                </div>
+                <div class="form-field">
+                    <label for="games-number">Games: </label>
+                    <input id="games-number" type="number">
+                </div>
+                <div class="btn" id="btn-newgame-start">Start</div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/modals.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

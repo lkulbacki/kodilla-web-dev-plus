@@ -59,12 +59,27 @@
             // to dynamically set iterator value to the functions, anonymous function must be used
             // otherwise last value of operator is always being set
             // http://bonsaiden.github.io/JavaScript-Garden/#function.closures
-            (function(j){
-                marker.addListener('click', function(){
-                    flkty.selectCell(j);
-                    console.log(j);
-                });
-            })(i);
+
+            marker.addListener('click', (function(j){
+                flkty.selectCell(j);
+                console.log(j);
+            }).bind(this, i));
+
+            // ALTERNATIVE SYNTAX - DOING THE SAME BUT COMPILIG AND RUNNING FUNCTION SEVERAL TIMES
+            // (function(j){
+            // marker.addListener('click', function(){
+            //     flkty.selectCell(j);
+            //     console.log(j);
+            // };
+            // })(i);
+
+            // OTHER SOLUTION: in for loop use 'let i=0' instead of 'var i=0'
+            // this is the most natural way, support for 'let' variable declaration is necessary though
+            // marker.addListener('click', function() {
+            //     flkty.selectCell(i);
+            //     console.log(i);
+            // });
+
         }
 
         // add action changing active marker for the one referenced by carousel

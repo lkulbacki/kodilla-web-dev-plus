@@ -1,0 +1,43 @@
+$font: "Nunito", Helvetica, Sans-Serif;
+$color-dark-grey: #202020;
+$color-white: #FFFFFF;
+
+$color-sand: #ded96f;
+$color-ground: #727242;
+$color-green: #3e5e04;
+$color-crema: #e6eceb;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background-color: $color-crema;
+  padding: 20px;
+}
+
+h1 {
+  color: $color-ground;
+  margin: 0 auto;
+}
+button {
+  border: 1px solid $color-ground;
+  background-color: $color-ground;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  color: $color-sand;
+
+  &:hover {
+    border: 1px solid $color-sand;
+    background-color: $color-sand;
+    color: $color-dark-grey;
+  }
+
+  &:active {
+    border: 1px solid $color-dark-grey;
+  }
+
+}

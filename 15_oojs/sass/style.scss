@@ -1,0 +1,139 @@
+$font: "Nunito", Helvetica, Sans-Serif;
+$color-dark-grey: #202020;
+$color-white: #FFFFFF;
+
+$color-green-verydark: #081305;
+$color-green-dark: #395112;
+$color-green: #84a02b;
+$color-green-light: #b7c656;
+$color-green-verylight: #cedf90;
+$color-frostbite-green: #989e8f;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background-color: $color-green-verydark;
+}
+
+h1 {
+  color: $color-frostbite-green;
+  margin: 20px;
+}
+
+.create-column {
+  margin-left: 20px;
+}
+
+.column-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  > div {
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.column {
+  position: relative;
+  width: 225px;
+  border: 1px solid $color-green-dark;
+  height: 100%;
+  padding-bottom: 25px;
+  background-color: $color-green-dark;
+
+  .btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-top: 4px;
+  }
+
+}
+
+h2 {
+  margin: 10px;
+  border-bottom: 1px solid $color-green;
+  padding-bottom: 15px;
+  color: $color-frostbite-green;
+}
+
+.clearfix {
+  display: table;
+  content: "";
+}
+
+.column-card-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  height: 100%;
+  //min-height: 10px; // to allow
+}
+
+.card {
+  @extend .clearfix;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: $color-green-light;
+  padding: 7px;
+  border-radius: 2px;
+  color: $color-green-dark;
+  .btn-delete {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: none;
+  }
+  &:hover .btn-delete {
+    display: block;
+  }
+  .btn-delete:hover {
+    background-color: $color-green-dark;
+    border: 1px solid $color-green-dark;
+    color: $color-green-light;
+  }
+  &:hover {
+    color: $color-green-verydark;
+  }
+}
+
+.card-description {
+  margin: 0;
+
+}
+
+button {
+  border: 1px solid $color-green;
+  background-color: $color-green;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  color: $color-green-dark;
+  &:hover {
+    border: 1px solid $color-green-light;
+    background-color: $color-green-light;
+    color: $color-green-verydark;
+  }
+  &:active {
+    border: 1px solid $color-green-verydark;
+  }
+}
+
+.add-card {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

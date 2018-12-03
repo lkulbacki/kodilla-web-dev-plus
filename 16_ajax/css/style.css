@@ -5,11 +5,12 @@
 body {
   font-family: "Nunito", Helvetica, Sans-Serif;
   background-color: #e6eceb;
+  padding: 20px;
 }
 
 h1 {
   color: #727242;
-  margin: 20px;
+  margin: 0 auto;
 }
 
 button {

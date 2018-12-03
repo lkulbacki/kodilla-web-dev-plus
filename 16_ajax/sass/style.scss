@@ -2,8 +2,6 @@ $font: "Nunito", Helvetica, Sans-Serif;
 $color-dark-grey: #202020;
 $color-white: #FFFFFF;
 
-$color-dark-blue: #006beb;
-$color-light-blue: #89defa;
 $color-sand: #ded96f;
 $color-ground: #727242;
 $color-green: #3e5e04;
@@ -16,11 +14,12 @@ $color-crema: #e6eceb;
 body {
   font-family: $font;
   background-color: $color-crema;
+  padding: 20px;
 }
 
 h1 {
   color: $color-ground;
-  margin: 20px;
+  margin: 0 auto;
 }
 button {
   border: 1px solid $color-ground;
@@ -30,12 +29,15 @@ button {
   cursor: pointer;
   outline: none;
   color: $color-sand;
+
   &:hover {
     border: 1px solid $color-sand;
     background-color: $color-sand;
     color: $color-dark-grey;
   }
+
   &:active {
     border: 1px solid $color-dark-grey;
   }
+
 }

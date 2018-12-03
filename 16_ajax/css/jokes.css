@@ -13,7 +13,7 @@ h1 {
   margin: 0 auto;
 }
 
-button, a {
+button {
   border: 1px solid #727242;
   background-color: #727242;
   border-radius: 4px;
@@ -23,22 +23,14 @@ button, a {
   color: #ded96f;
 }
 
-button:hover, a:hover {
+button:hover {
   border: 1px solid #ded96f;
   background-color: #ded96f;
   color: #202020;
 }
 
-button:active, a:active {
+button:active {
   border: 1px solid #202020;
 }
 
-a {
-  display: block;
-  margin-top: 20px;
-  text-decoration: none;
-  width: 100px;
-  text-align: center;
-  padding: 2px;
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=jokes.css.map */

@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", Helvetica, Sans-Serif;
+  background-color: #081305;
+}
+
+h1 {
+  color: #989e8f;
+  margin: 20px;
+}
+
+.create-column {
+  margin-left: 20px;
+}
+
+.column-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  margin: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+.column-container > div {
+  margin-right: 10px;
+}
+
+.column-container > div:last-of-type {
+  margin-right: 0;
+}
+
+.column {
+  -ms-flex-order: 1;
+      order: 1;
+  position: relative;
+  min-width: 300px;
+  min-height: 50vh;
+  height: 100%;
+  border: 1px solid #395112;
+  padding-bottom: 25px;
+  background-color: #395112;
+}
+
+.column .btn-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding-top: 4px;
+}
+
+h2 {
+  margin: 10px;
+  border-bottom: 1px solid #84a02b;
+  padding-bottom: 15px;
+  color: #989e8f;
+}
+
+.clearfix, .card {
+  display: table;
+  content: "";
+}
+
+.column-card-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #b7c656;
+  padding: 7px;
+  border-radius: 2px;
+  color: #395112;
+  overflow: hidden;
+}
+
+.card .btn-delete {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: none;
+}
+
+.card:hover .btn-delete {
+  display: block;
+}
+
+.card .btn-delete:hover {
+  background-color: #395112;
+  border: 1px solid #395112;
+  color: #b7c656;
+}
+
+.card:hover {
+  color: #081305;
+}
+
+.card-description {
+  margin: 0;
+}
+
+button {
+  border: 1px solid #84a02b;
+  background-color: #84a02b;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  color: #395112;
+}
+
+button:hover {
+  border: 1px solid #b7c656;
+  background-color: #b7c656;
+  color: #081305;
+}
+
+button:active {
+  border: 1px solid #081305;
+}
+
+.add-card {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+/*# sourceMappingURL=kanban.css.map */

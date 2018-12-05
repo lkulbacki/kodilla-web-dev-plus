@@ -1,3 +1,5 @@
+var OSinfo = require('../modules/osinfo');
+
 process.stdin.setEncoding('utf-8');
 
 process.stdin.on('readable', function() {
@@ -16,8 +18,21 @@ process.stdin.on('readable', function() {
             case '/encoding':
                 process.stdout.write(process.env['LC_CTYPE'] + "\n");
                 break;
+            case '/os':
+                OSinfo.print();
+                break;
             default:
                 process.stderr.write('Wrong instruction!\n');
         }
     }
 });
+
+// timeFormatter testing
+//
+// var timeFormatter = require('../modules/timeFormatter');
+// console.log(timeFormatter.format(45, 's'));
+// console.log(timeFormatter.format(233, 's'));
+// console.log(timeFormatter.format(3520, 's'));
+// console.log(timeFormatter.format(33520, 's'));
+// console.log(timeFormatter.format(933520, 's'));
+// console.log(timeFormatter.format(45, 'h'));

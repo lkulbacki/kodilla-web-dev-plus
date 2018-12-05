@@ -18,12 +18,21 @@ exports.welcome = function(request, response) {
     fs.readFile('templates/start.html', function(err, html) {
         response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
         response.write(html);
+    });
+};
+
+exports.css = function(request, response) {
+    console.log("Rozpoczynam obsługę żądania css.");
+    fs.readFile('./css/style.css', function(err, css) {
+        response.writeHead(200, {"Content-Type": "text/css; charset=utf-8"});
+        response.write(css);
         response.end();
     });
 };
 
 exports.error = function(request, response) {
     console.log("ERROR Nie wiem co robić.".red);
+    response.writeHead(404, {"Content-Type": "text/html; charset=utf-8"});
     response.write("404 :(");
     response.end();
 };

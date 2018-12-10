@@ -3,32 +3,37 @@ var ContactForm = React.createClass({
         contact: React.PropTypes.object.isRequired
     },
 
-    render: function() {
+    render: function () {
         return (
             React.createElement('form', {className: 'contactForm'},
-                React.createElement('label', {},
-                    React.createElement("span", {}, "Imię: "),
+                React.createElement('div', {className: 'formField'},
+                    React.createElement('label', {htmlFor: 'inputName'}, 'Imię: '),
                     React.createElement('input', {
+                        id: 'inputName',
                         type: 'text',
                         placeholder: 'Imię',
                         value: this.props.contact.firstName,
-                    })),
-                React.createElement('label', {},
-                    React.createElement("span", {}, "Nazwisko: "),
+                    }),
+                ),
+                React.createElement('div', {className: 'formField'},
+                    React.createElement('label', {htmlFor: 'inputLastName'}, 'Nazwisko: '),
                     React.createElement('input', {
-                    type: 'text',
-                    placeholder: 'Nazwisko',
-                    value: this.props.contact.lastName,
-                })),
-                React.createElement('label', {},
-                    React.createElement("span", {}, "Email: "),
-
+                        id: 'inputLastName',
+                        type: 'text',
+                        placeholder: 'Nazwisko',
+                        value: this.props.contact.lastName,
+                    })
+                ),
+                React.createElement('div', {className: 'formField'},
+                    React.createElement('label', {htmlFor: 'inputLastName'}, 'Email: '),
                     React.createElement('input', {
-                    type: 'email',
-                    placeholder: 'Email',
-                    value: this.props.contact.email,
-                })),
-                React.createElement('button', {type: 'submit'}, "Dodaj kontakt")
+                        id: 'inputLastName',
+                        type: 'email',
+                        placeholder: 'Email',
+                        value: this.props.contact.email,
+                    })
+                ),
+                React.createElement('button', {type: 'submit', className: 'btn'}, "Dodaj kontakt")
             )
         )
     },

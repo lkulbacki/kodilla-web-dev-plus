@@ -17,7 +17,7 @@ var Contact = React.createClass({
                         this.props.item.email
                     )
                 ),
-                React.createElement('div', {className: 'icon'}, "")
+                React.createElement('div', {className: 'icon'})
             )
         )
     },

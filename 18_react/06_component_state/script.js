@@ -41,6 +41,7 @@ var Counter = React.createClass({
         // - setting up listeners, including 3rd party listeners (like interacting with chart, especially from 3rd party)
         // !!! we can start another render pass here, forcing React to go to update phase with forceUpdate()
         // (use with caution, may cause problems)
+        // this is a place to make AJAX calls to server
 
     },
 

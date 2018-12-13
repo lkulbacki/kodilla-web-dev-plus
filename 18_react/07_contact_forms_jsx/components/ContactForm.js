@@ -5,36 +5,22 @@ var ContactForm = React.createClass({
 
     render: function () {
         return (
-            React.createElement('form', {className: 'contactForm'},
-                React.createElement('div', {className: 'formField'},
-                    React.createElement('label', {htmlFor: 'inputName'}, 'Imię: '),
-                    React.createElement('input', {
-                        id: 'inputName',
-                        type: 'text',
-                        placeholder: 'Imię',
-                        value: this.props.contact.firstName,
-                    }),
-                ),
-                React.createElement('div', {className: 'formField'},
-                    React.createElement('label', {htmlFor: 'inputLastName'}, 'Nazwisko: '),
-                    React.createElement('input', {
-                        id: 'inputLastName',
-                        type: 'text',
-                        placeholder: 'Nazwisko',
-                        value: this.props.contact.lastName,
-                    })
-                ),
-                React.createElement('div', {className: 'formField'},
-                    React.createElement('label', {htmlFor: 'inputLastName'}, 'Email: '),
-                    React.createElement('input', {
-                        id: 'inputLastName',
-                        type: 'email',
-                        placeholder: 'Email',
-                        value: this.props.contact.email,
-                    })
-                ),
-                React.createElement('button', {type: 'submit', className: 'btn'}, "Dodaj kontakt")
-            )
+            <form className={'contactForm'}>
+                <div className={'formField'}>
+                    <label htmlFor={'inputName'}>Imię: </label>
+                    <input id='inputName' type='text' placeholder='Imię' value={this.props.contact.firstName}/>
+                </div>
+                <div className={'formField'}>
+                    <label htmlFor={'inputLastName'}>Imię: </label>
+                    <input id='inputLastName' type='text' placeholder='Nazwisko' value={this.props.contact.lastName}/>
+                </div>
+                <div className={'formField'}>
+                    <label htmlFor={'inputEmail'}>Email: </label>
+                    <input id='inputEmail' type='email' placeholder='contact@example.com' value={this.props.contact.email}/>
+                </div>
+                <button type={'submit'} className={'btn'}>Dodaj kontakt</button>
+            </form>
         )
+
     },
 });

@@ -23,6 +23,7 @@ var Stopwatch = function () {
                 seconds: 0,
                 miliseconds: 0
             };
+
             this.print(this.times);
         }
     }, {
@@ -51,6 +52,7 @@ var Stopwatch = function () {
         key: 'step',
         value: function step() {
             if (!this.running) return;
+
             this.calculate();
             this.print();
         }
@@ -58,10 +60,12 @@ var Stopwatch = function () {
         key: 'calculate',
         value: function calculate() {
             this.times.miliseconds += 1;
+
             if (this.times.miliseconds >= 100) {
                 this.times.seconds += 1;
                 this.times.miliseconds = 0;
             }
+
             if (this.times.seconds >= 60) {
                 this.times.minutes += 1;
                 this.times.seconds = 0;

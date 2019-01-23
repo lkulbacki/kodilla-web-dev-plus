@@ -1,0 +1,40 @@
+.userList {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0 auto; }
+
+.user {
+  background-color: #a0c5cf;
+  width: 110px;
+  margin: 20px;
+  padding: 10px; }
+  .user a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #202020; }
+  .user img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto; }
+  .user:hover {
+    background-color: #0093b7; }
+
+.submitForm {
+  max-width: 850px;
+  margin: 0 auto; }
+
+label {
+  margin: 10px auto;
+  display: block;
+  width: 430px;
+  font-size: 50px; }
+
+#searchText {
+  display: block;
+  padding: 5px;
+  margin: auto;
+  font-size: 20px; }
+
+/*# sourceMappingURL=style.css.map */

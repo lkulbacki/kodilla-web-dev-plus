@@ -1,10 +1,5 @@
 console.log('OK!');
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
-
 
 class App extends React.Component {
     constructor() {
@@ -30,8 +25,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={event => this.onSubmit(event)}>
+            <section className="search">
+                <form className="submitForm" onSubmit={event => this.onSubmit(event)}>
                     <label htmlFor="searchText">Search by user name</label>
                     <input
                         type="text"
@@ -40,7 +35,7 @@ class App extends React.Component {
                         value={this.state.searchText}/>
                 </form>
                 <UsersList users={this.state.users}/>
-            </div>
+            </section>
         );
     }
 }
@@ -52,7 +47,7 @@ class UsersList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="userList">
                 {this.users}
             </div>
         );
@@ -62,10 +57,16 @@ class UsersList extends React.Component {
 class User extends React.Component {
     render() {
         return (
-            <div>
+            <div className="user">
+                <a href={this.props.user.html_url} target="_blank">
                 <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/>
-                <a href={this.props.user.html_url} target="_blank">{this.props.user.login}</a>
+                {this.props.user.login}</a>
             </div>
         );
     }
 }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);

@@ -10,8 +10,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 console.log('OK!');
 
-ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
-
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
@@ -53,11 +51,11 @@ var App = function (_React$Component) {
             var _this3 = this;
 
             return React.createElement(
-                'div',
-                null,
+                'section',
+                { className: 'search' },
                 React.createElement(
                     'form',
-                    { onSubmit: function onSubmit(event) {
+                    { className: 'submitForm', onSubmit: function onSubmit(event) {
                             return _this3.onSubmit(event);
                         } },
                     React.createElement(
@@ -95,7 +93,7 @@ var UsersList = function (_React$Component2) {
         value: function render() {
             return React.createElement(
                 'div',
-                null,
+                { className: 'userList' },
                 this.users
             );
         }
@@ -125,11 +123,11 @@ var User = function (_React$Component3) {
         value: function render() {
             return React.createElement(
                 'div',
-                null,
-                React.createElement('img', { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
+                { className: 'user' },
                 React.createElement(
                     'a',
                     { href: this.props.user.html_url, target: '_blank' },
+                    React.createElement('img', { src: this.props.user.avatar_url, style: { maxWidth: '100px' } }),
                     this.props.user.login
                 )
             );
@@ -138,3 +136,5 @@ var User = function (_React$Component3) {
 
     return User;
 }(React.Component);
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('root'));

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development ./03/app.js --output 03/app.bundle.js"
+    "start": "webpack"
   },
   "author": "",
   "license": "ISC"

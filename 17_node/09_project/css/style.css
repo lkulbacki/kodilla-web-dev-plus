@@ -1,0 +1,42 @@
+body {
+    box-sizing: border-box;
+    background-color: #d3dcc8;
+    color: #80a71a;
+    font-family: Helvetica, Sans-Serif;
+}
+
+h1 {
+    color: #202020;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+button, a {
+    border: 1px solid #727242;
+    background-color: #727242;
+    border-radius: 4px;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+    color: #ded96f;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 28px;
+    border: 1px solid #ded96f;
+    background-color: #ded96f;
+    color: #202020;
+    outline: none;
+}
+
+button:active, a:active {
+    border: 1px solid #202020;
+}
+

@@ -1,0 +1,9 @@
+.Todo {
+    border: 1px solid #202020;
+    margin-bottom: 10px;
+
+}
+
+.Todo:last-of-type {
+    margin-bottom: 0;
+}

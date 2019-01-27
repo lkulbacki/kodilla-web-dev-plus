@@ -21,6 +21,7 @@ h1 {
   color: $color-ground;
   margin: 0 auto;
 }
+
 button {
   border: 1px solid $color-ground;
   background-color: $color-ground;
@@ -40,4 +41,14 @@ button {
     border: 1px solid $color-dark-grey;
   }
 
+}
+
+a {
+  @extend button;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  padding: 2px;
 }

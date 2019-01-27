@@ -13,7 +13,7 @@ h1 {
   margin: 0 auto;
 }
 
-button {
+button, a {
   border: 1px solid #727242;
   background-color: #727242;
   border-radius: 4px;
@@ -23,13 +23,26 @@ button {
   color: #ded96f;
 }
 
-button:hover {
+button:hover, a:hover {
   border: 1px solid #ded96f;
   background-color: #ded96f;
   color: #202020;
 }
 
-button:active {
+button:active, a:active {
   border: 1px solid #202020;
 }
-/*# sourceMappingURL=style.css.map */
+
+a {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  padding: 2px;
+}
+
+li img {
+  max-width: 150px;
+}
+/*# sourceMappingURL=country.css.map */

@@ -1,13 +1,13 @@
 var board = {
     name: 'Tablica Kanban',
-    addColumn: function(column) {
+    addColumn: function (column) {
         this.element.appendChild(column.element);
         initSortable(column.id); //About this feature we will tell later
     },
     element: document.querySelector('#board .column-container')
 };
 
-document.querySelector('#board .create-column').addEventListener('click', function() {
+document.querySelector('#board .create-column').addEventListener('click', function () {
     var name = prompt('Enter a column name');
     var data = new FormData();
 
@@ -18,10 +18,10 @@ document.querySelector('#board .create-column').addEventListener('click', functi
         headers: myHeaders,
         body: data,
     })
-        .then(function(resp) {
+        .then(function (resp) {
             return resp.json();
         })
-        .then(function(resp) {
+        .then(function (resp) {
             var column = new Column(resp.id, name);
             board.addColumn(column);
         });

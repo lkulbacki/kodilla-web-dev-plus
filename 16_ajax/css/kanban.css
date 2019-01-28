@@ -47,11 +47,22 @@ h1 {
   background-color: #395112;
 }
 
+.column .btn {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+}
+
+.column .btn-edit {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
 .column .btn-delete {
   position: absolute;
   top: 10px;
   right: 10px;
-  padding-top: 4px;
 }
 
 h2 {
@@ -86,18 +97,28 @@ h2 {
   overflow: hidden;
 }
 
-.card .btn-delete {
+.card .btn {
+  height: 25px;
+  width: 25px;
   position: absolute;
-  top: 3px;
-  right: 3px;
   display: none;
 }
 
-.card:hover .btn-delete {
+.card .btn-delete {
+  top: 3px;
+  right: 3px;
+}
+
+.card .btn-edit {
+  top: 3px;
+  right: 31px;
+}
+
+.card:hover .btn {
   display: block;
 }
 
-.card .btn-delete:hover {
+.card .btn:hover {
   background-color: #395112;
   border: 1px solid #395112;
   color: #b7c656;

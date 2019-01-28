@@ -1,0 +1,1 @@
+Tekst, który zapiszemy w pliku tekst.txt

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", Helvetica, Sans-Serif;
+  background-color: #e6eceb;
+  padding: 20px;
+}
+
+h1 {
+  color: #727242;
+  margin: 0 auto;
+}
+
+button {
+  border: 1px solid #727242;
+  background-color: #727242;
+  border-radius: 4px;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  color: #ded96f;
+}
+
+button:hover {
+  border: 1px solid #ded96f;
+  background-color: #ded96f;
+  color: #202020;
+}
+
+button:active {
+  border: 1px solid #202020;
+}
+/*# sourceMappingURL=joke.css.map */

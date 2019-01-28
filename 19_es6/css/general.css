@@ -1,0 +1,34 @@
+body {
+    background-color: #cedf90;
+    font-family: Helvetica, Sans-Serif;
+}
+
+.controls {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.button {
+    color: #202020;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #80a71a;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.button:visited {
+    color: #202020;
+}
+
+.button:hover {
+    background-color: #7E9FED;
+}
+
+.stopwatch {
+    margin-bottom: 20px;
+}
+
+.results {
+    /*list-style: none;*/
+}

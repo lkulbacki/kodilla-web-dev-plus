@@ -1,0 +1,11 @@
+html
+    head
+        title Google OAuth
+        style
+            include ../style05/style05.css
+    body
+        p Strona logowania poprzez Google OAuth
+        if(user)
+            h1 Hi, #{user.name}
+        else
+            a.btn(href="/auth/google") Sign In

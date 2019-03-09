@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start02": "nodemon ./server_02.js localhost 3000",
-    "start04": "nodemon ./server_04.js localhost 3000"
+    "start04": "nodemon ./server_04.js localhost 3000",
+    "start05": "nodemon ./server_05.js localhost 3000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"

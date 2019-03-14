@@ -80,5 +80,4 @@ typings/
 
 # build catalog
 build/
-
-config06.js
+public/

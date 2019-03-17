@@ -1,15 +1,15 @@
 import uuid from './node_modules/uuid/bin/uuid';
 
-const CREATE_COMMENT = 'CREATE_COMMENT';
-const EDIT_COMMENT = 'EDIT_COMMENT';
-const REMOVE_COMMENT = 'REMOVE_COMMENT';
-const UPVOTE = 'UPVOTE';
-const DOWNVOTE = 'DOWNVOTE';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const UPVOTE_COMMENT = 'UPVOTE';
+export const DOWNVOTE_COMMENT = 'DOWNVOTE';
 
 
-function createComment(text) {
+function addComment(text) {
     return {
-        type: CREATE_COMMENT,
+        type: ADD_COMMENT,
         text,
         id: uuid.v4()
     }
@@ -32,19 +32,19 @@ function removeComment(id) {
 
 function upvoteComment(id) {
     return {
-        type: UPVOTE,
+        type: UPVOTE_COMMENT,
         id: id
     }
 }
 
 function downvoteComment(id) {
     return {
-        type: DOWNVOTE,
+        type: DOWNVOTE_COMMENT,
         id: id
     }
 }
 
-const boundCreateComment = text => dispatch(createComment(text));
+const boundCreateComment = text => dispatch(addComment(text));
 const boundEditComment = (id, text) => dispatch(editComment(id,text));
 const boundRemoveComment = (id) => dispatch(removeComment(id));
 const boundUpvoteComment = id => dispatch(upvoteComment(id));

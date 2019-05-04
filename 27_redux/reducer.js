@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import comments from './reducer_comments';
 
-const app = combineReducers({
+export const reducers = combineReducers({
     comments
 });

@@ -19,13 +19,12 @@ export default function comments(state = initialState, action) {
             );
 
         case EDIT_COMMENT:
-            return Object.assign({}, state, {
-                comments: state.map((comment) => {
-                    if (comment.id === action.id) {
-                        return Object.assign({}, comment, {text: action.text})
-                    }
-                    return comment
-                })
+            console.log('EDIT_COMMENT');
+            return state.map((comment) => {
+                if (comment.id === action.id) {
+                    return Object.assign({}, comment, {text: action.text})
+                }
+                return comment
             });
 
         case UPVOTE_COMMENT:

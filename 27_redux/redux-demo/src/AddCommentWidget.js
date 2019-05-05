@@ -1,25 +1,36 @@
 import React from 'react';
-import {addComment} from "./actions";
 
 class AddCommentWidget extends React.Component {
-    constructor(){
+    constructor () {
         super();
+        this.state = {text: ''};
     }
 
-    addCommentNow = (e) => {
-        store.dispatch(addComment('pierwszy komentarz'));
-    }
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    handleSubmit = event => {
+        console.log(this.state.text);
+        if (this.state.text !== "") {
+            this.props.addComment(this.state.text);
+        }
+        else {
+            this.props.addComment('PUSTY KOMENTARZ');
+        }
+        event.preventDefault();
+    };
 
     render() {
         return (
-            <input type="text" onSubmit={addCommentNow}/>
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" name="text" value={this.state.text} onChange={this.handleChange}/>
+                <input type="submit"/>
+            </form>
         )
     }
 }
 
-const Comment = ({text, votes, id, upvoteComment, downvoteComment}) =>
-    <li>
-        {text} <span>votes: {votes}</span> <button onClick={() => upvoteComment(id)}>Thumb up</button> <button onClick={() => downvoteComment(id)}>Thumb down</button>
-    </li>;
-
-export default Comment;
+export default AddCommentWidget;

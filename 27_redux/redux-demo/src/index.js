@@ -6,9 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import {reducer} from './reducer';
 import {addComment} from "./actions";
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import { createLogger } from 'redux-logger';
 
-const store = createStore(reducer);
+const logger = createLogger();
+const store = createStore(reducer, applyMiddleware(logger));
 
 ReactDOM.render(
     <Provider store={store}>
@@ -23,9 +25,9 @@ const logstate = () => {
 };
 
 store.subscribe(logstate);
-store.dispatch(addComment('pierwszy komentarz'));
-store.dispatch(addComment('drugi komentarz'));
-store.dispatch(addComment('czeci komentarz'));
+// store.dispatch(addComment('pierwszy komentarz'));
+// store.dispatch(addComment('drugi komentarz'));
+// store.dispatch(addComment('czeci komentarz'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

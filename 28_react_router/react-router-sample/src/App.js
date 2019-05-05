@@ -7,6 +7,7 @@ class App extends Component {
                 <Route path='/' component={Navigation}>
                     <IndexRoute component={Home} />
                     <Route path='/contact' component={Contact} />
+                    <Route path='/hello/:name' component={Hello} />
                     <Route path='*' component={PageNotFound} />
                 </Route>
             </Router>        )
@@ -24,5 +25,6 @@ const Navigation = props => (
     </div>
 );
 const PageNotFound = () => <h1>404 Not Found</h1>;
+const Hello = (props) => <h1>Witaj, {props.params.name}</h1>;
 
 export default App

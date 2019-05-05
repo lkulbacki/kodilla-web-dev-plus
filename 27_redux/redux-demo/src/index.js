@@ -8,9 +8,11 @@ import {addComment} from "./actions";
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import { createLogger } from 'redux-logger';
+import DevTools from './DevTools';
 
 const logger = createLogger();
-const store = createStore(reducer, applyMiddleware(logger));
+// const store = createStore(reducer, applyMiddleware(logger));
+const store = createStore(reducer, DevTools.instrument());
 
 ReactDOM.render(
     <Provider store={store}>

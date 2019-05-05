@@ -14,9 +14,9 @@ export default function comments(state = initialState, action) {
                 , ...state];
 
         case REMOVE_COMMENT:
-            return Object.assign({}, state, {
-                comments: state.filter(comment => comment.id !== action.id)
-            });
+            console.log('REMOVE_COMMENT');
+            return Object.assign([], state.filter(comment => comment.id !== action.id)
+            );
 
         case EDIT_COMMENT:
             return Object.assign({}, state, {

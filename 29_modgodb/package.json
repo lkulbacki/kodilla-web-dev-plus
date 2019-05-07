@@ -1,13 +1,34 @@
 {
   "name": "nodejsmongooseapp",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "populatedb": "node server.js"
+  },
   "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "mongoose": "^5.5.6"
   },
-  "scripts": {
-    "start": "node server.js"
-  },
   "devDependencies": {
-  }
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/guarded-crag-24501.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "mongoose"
+  ],
+  "license": "MIT"
 }

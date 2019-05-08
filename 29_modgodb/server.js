@@ -2,9 +2,30 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://dbUser:3QXC6558vJygunG@cluster0-b3rha.mongodb.net/test?retryWrites=true', {
-    useMongoClient: true
-});
+
+const options = {
+    autoIndex: false, // Don't build indexes
+    reconnectTries: 30, // Retry up to 30 times
+    reconnectInterval: 500, // Reconnect every 500ms
+    poolSize: 10, // Maintain up to 10 socket connections
+    // If not connected, return errors immediately rather than waiting for reconnect
+    bufferMaxEntries: 0,
+    // to eliminate MongoDB Atlas warning
+    useNewUrlParser: true
+};
+
+const connectWithRetry = () => {
+    console.log('MongoDB connection with retry')
+    mongoose.connect("mongodb+srv://dbUser:3QXC6558vJygunG@cluster0-b3rha.mongodb.net/test?retryWrites=true",
+        options).then(()=>{
+        console.log('MongoDB is connected')
+    }).catch(err=>{
+        console.log('MongoDB connection unsuccessful, retry after 5 seconds.')
+        setTimeout(connectWithRetry, 5000)
+    })
+};
+
+connectWithRetry();
 
 //new user Schema
 const userSchema = new Schema({
@@ -80,7 +101,7 @@ const findAllUsers = function() {
         if (err) throw err;
         console.log('Actual database records are ' + res);
     });
-}
+};
 
 const findSpecificRecord = function() {
     // find specific record
@@ -88,7 +109,7 @@ const findSpecificRecord = function() {
         if (err) throw err;
         console.log('Record you are looking for is ' + res);
     })
-}
+};
 
 const updadeUserPassword = function() {
     // update user password
@@ -104,7 +125,7 @@ const updadeUserPassword = function() {
                 console.log('Uzytkownik ' + user.name + ' zostal pomyslnie zaktualizowany');
             })
         })
-}
+};
 
 const updateUsername = function() {
     // update username
@@ -113,7 +134,7 @@ const updateUsername = function() {
 
         console.log('Nazwa uzytkownika po aktualizacji to ' + user.username);
     })
-}
+};
 
 const findMarkAndDelete = function() {
     // find specific user and delete
@@ -123,7 +144,7 @@ const findMarkAndDelete = function() {
                 console.log('User successfully deleted');
             });
         })
-}
+};
 
 const findKennyAndDelete = function() {
     // find specific user and delete
@@ -133,7 +154,7 @@ const findKennyAndDelete = function() {
                 console.log('User successfully deleted');
             });
         });
-}
+};
 
 const findBennyAndRemove = function() {
     // find specific user and delete
@@ -142,8 +163,9 @@ const findBennyAndRemove = function() {
             return user.remove(function() {
                 console.log('User successfully deleted');
             });
-        });
-}
+        })
+        ;
+};
 
 Promise.all([kenny.save(), mark.save(), benny.save()])
     .then(findAllUsers)
